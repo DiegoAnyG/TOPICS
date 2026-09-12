@@ -14,15 +14,26 @@ Updated 2026-09-12. This is a handover, not a historical log.
 - The core methods and input contract are in docs/METHODS.md.
 - The user requested short English commits and changelog items, pushed to the configured origin.
 
+## Accuracy research — 2026-09-12
+
+- Read docs/ACCURACY_RESEARCH.md and docs/ACCURACY_PLAN.md for the current priorities.
+- The six-pose independent audit is in docs/accuracy-audit.json, reproduced by docs/audit_accuracy.py.
+  Both rank-1 PPI DockQ scores are poor; all 96 candidates per control have current clash pairs.
+- Complete-head binding geometry is lost despite small ring-fit RMSD. The lexicographic
+  ranking is dominated by clash count. No scientific engine changes were made during research.
+- The research report includes 24 references and Markdown, offline HTML and PDF versions.
+  Optional DockQ was used in an isolated temporary environment, not added to uv.lock.
+
 ## Next work
 
-1. Design a larger held-out benchmark before changing sampling or ranking using these controls.
-2. Improve physically justified sampling and interface refinement; the current rigid baseline
-   has no protein flexibility, PPI energy or calibrated scoring.
-3. Consider a chemically explicit fragment/linker builder and general SDF input. Currently
-   the program requires a complete PROTAC CCD and local head poses.
-4. Add residue-typed interaction profiling, clustering and full-complex cofactor handling
-   when their methods and validation are defined.
+1. Complete P0: general independent evaluation, chemical validity and a curated benchmark
+   manifest with protected family/scaffold groups, input strata and fixed budgets.
+2. Complete P1: explicit complete-head/linker mappings, preserved binary binding geometry,
+   SDF/SMILES input and constrained linker/protein-pose sampling; retain schema-1 compatibility.
+3. Evaluate coarse PPI search, selective refinement, clustering and physical ranking with
+   development/validation ablations before a frozen test evaluation.
+4. Pilot DeepTernary in isolation and use Boltz-2 as an optional comparator after memory
+   checks. Published metrics differ by input protocol and best-of-N versus rank-1 selection.
 5. Validate Windows installation/runtime; only Linux/WSL and local CUDA were tested here.
 
 Never start Docker Desktop automatically. Do not reuse an output directory for a new run.

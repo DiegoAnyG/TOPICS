@@ -40,3 +40,22 @@ Lesson: a near-zero native-geometry control proves mapping consistency, not pred
 
 - Finalized documentation formatting and prepared the verified application and local reports for the project workspace.
 - Scientific code and the recorded control results remain unchanged from the verified 2026-09-11 runs.
+
+## 2026-09-12 — Accuracy investigation
+
+- Reviewed the engine, chemistry, geometry, structure selection and evaluation against
+  published ternary predictors, independent benchmarks and current upstream documentation.
+- Added 24-source research and a staged plan; explicit ligand inputs, binary/ternary mixtures,
+  best-of-N selection and training overlap explain important differences among reported results.
+- Audited native, rank-1 and lowest-E3-RMSD candidates with DockQ 2.1.3 in an isolated environment.
+  Rank-1 DockQ values were 0.01585 and 0.06362; native self-comparisons approached one.
+- Measured ligand binding-region deviations after independent protein alignment; the
+  5T35 rank-1 E3-associated atoms deviate by 7.50 A despite 0.277 A maximum ring-fit RMSD.
+- Repeated the entire audit and obtained byte-identical JSON; checked exported native
+  identity, saved clash counts, document links, offline navigation and a 12-page PDF.
+- Scientific source, production dependencies and original prediction runs remain unchanged.
+
+Lesson: a PPI DockQ of acceptable quality can coexist with severe intercomponent clashes;
+structural similarity and chemical validity require separate, jointly reported endpoints.
+Lesson: preserve complete chemical binding groups; a small-ring alignment does not validate
+the pose of the rest of the ligand or the orientation of a distant protein domain.

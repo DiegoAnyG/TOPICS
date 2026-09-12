@@ -2,6 +2,15 @@
 
 Newest first. State what changed, why and how it was verified.
 
+## 2026-09-12 — Accuracy investigation and roadmap
+
+- Added a cited research report, offline HTML/PDF and a staged accuracy implementation plan.
+- Added a reproducible diagnostic script and evidence for DockQ, clashes and local binding geometry.
+
+Verification: six selected/native DockQ evaluations, native-identity and saved-clash checks,
+byte-identical repeated audit, offline report navigation, PDF export and local link checks.
+Prediction source, production dependencies and the existing baseline outputs are unchanged.
+
 ## 2026-09-11 — Project documentation established
 
 Created an independent project with AGENTS.md, a root README and seven working-note files.

@@ -1,0 +1,565 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TOPICS Accuracy Research and Development Plan</title><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#222;background:#fff;font:16px/1.55 Georgia,"DejaVu Serif",serif}main{max-width:1040px;margin:auto;padding:40px 32px}h1,h2,h3,nav{font-family:Arial,"DejaVu Sans",sans-serif}h1{font-size:32px;line-height:1.2;margin:0 0 24px}h2{font-size:24px;margin:40px 0 16px}h3{font-size:18px;margin:26px 0 12px}p{margin:0 0 16px}a{color:#204662;text-decoration:underline;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;line-height:1.35;margin:20px 0 24px}th,td{padding:10px 9px;vertical-align:top;text-align:left;border-bottom:1px solid #ccc}th{background:#eee;border-top:1px solid #777}tr:nth-child(even){background:#f8f8f8}pre{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #ccc;padding:14px;font-size:13px}code{font-size:.9em}nav{font-size:14px;border-bottom:1px solid #bbb;padding:0 0 18px;margin:0 0 30px}nav ul{margin:6px 0;padding-left:24px}summary{cursor:pointer}.footnotes{font-size:13px;line-height:1.4}.footnotes li{margin-bottom:12px}.footnotes p{margin:0}sup{line-height:0}button{font:inherit;padding:6px 12px;border:1px solid #888;background:white;cursor:pointer;margin:14px 0 0}@media(max-width:700px){main{padding:24px 16px}table{font-size:12px}th,td{padding:6px 4px}}@page{size:A4;margin:17mm 16mm}@media print{body{font-size:10.5pt;line-height:1.38}main{max-width:none;padding:0}h1{font-size:23pt}h2{font-size:16pt;margin:23pt 0 10pt}h3{font-size:12pt;margin:15pt 0 7pt}h1,h2,h3{break-after:avoid}p{margin-bottom:9pt;orphans:3;widows:3}table{font-size:8.6pt;margin:12pt 0;break-inside:avoid}th,td{padding:6pt}pre{font-size:8pt;break-inside:avoid}a{color:#222}.footnotes{font-size:8.5pt;line-height:1.3}.footnotes li{break-inside:avoid;margin-bottom:8pt}nav{display:none}}
+</style></head><body><main><nav aria-label="Report navigation"><details><summary>Contents</summary><ul>
+  <li><a href="#topics-accuracy-research-and-development-plan">TOPICS Accuracy Research and Development Plan</a>
+  <ul>
+    <li><a href="#1-assessment">1. Assessment</a></li>
+    <li><a href="#2-what-the-current-controls-establish">2. What the current controls establish</a>
+    <ul>
+      <li><a href="#structural-accuracy-and-physical-validity">Structural accuracy and physical validity</a></li>
+      <li><a href="#ranking-mostly-considers-one-feature">Ranking mostly considers one feature</a></li>
+      <li><a href="#the-bound-ligand-groups-are-insufficiently-constrained">The bound ligand groups are insufficiently constrained</a></li>
+      <li><a href="#other-limitations-visible-in-the-code">Other limitations visible in the code</a></li>
+    </ul></li>
+    <li><a href="#3-relevant-methods-and-the-strength-of-their-evidence">3. Relevant methods and the strength of their evidence</a>
+    <ul>
+      <li><a href="#established-docking-pipelines">Established docking pipelines</a></li>
+      <li><a href="#learned-ternary-generators-and-cofolding-models">Learned ternary generators and cofolding models</a></li>
+    </ul></li>
+    <li><a href="#4-proposed-changes-to-the-scientific-pipeline">4. Proposed changes to the scientific pipeline</a>
+    <ul>
+      <li><a href="#complete-chemical-head-definitions-and-constrained-linkers">Complete chemical head definitions and constrained linkers</a></li>
+      <li><a href="#validity-filtering-and-limited-refinement">Validity filtering and limited refinement</a></li>
+      <li><a href="#ranking-clustering-and-confidence">Ranking, clustering and confidence</a></li>
+    </ul></li>
+    <li><a href="#5-benchmark-design-that-can-establish-improvement">5. Benchmark design that can establish improvement</a>
+    <ul>
+      <li><a href="#inputs-assemblies-and-exclusions">Inputs, assemblies and exclusions</a></li>
+      <li><a href="#separation-from-development-and-training-data">Separation from development and training data</a></li>
+      <li><a href="#metrics-and-statistical-unit">Metrics and statistical unit</a></li>
+    </ul></li>
+    <li><a href="#6-implementation-sequence-and-decision-gates">6. Implementation sequence and decision gates</a></li>
+    <li><a href="#7-resource-and-integration-strategy">7. Resource and integration strategy</a></li>
+    <li><a href="#8-reporting-and-limits-of-interpretation">8. Reporting and limits of interpretation</a></li>
+    <li><a href="#9-reproducible-audit">9. Reproducible audit</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul></li>
+</ul>
+</details><button onclick="window.print()">Print / save PDF</button></nav><h1 id="topics-accuracy-research-and-development-plan">TOPICS Accuracy Research and Development Plan</h1>
+
+<h2 id="1-assessment">1. Assessment</h2>
+
+<p>TOPICS needs a better model of the coupled protein–PROTAC–protein geometry before a larger conformer count can yield dependable predictions. Its current implementation samples a free PROTAC, fits small atom selections to two binding sites, and places otherwise rigid proteins around it. This provides a reproducible baseline, but does not preserve the complete bound ligand groups, search protein interfaces independently, or optimize the assembled complex in its molecular environment.</p>
+
+<p>The recommended sequence is: establish independent evaluation; preserve complete binding groups while sampling linker and protein orientations; reject chemically invalid poses; refine a small, diverse ensemble; then improve ranking against a separate validation set. Test DeepTernary as an optional alternative generator and Boltz-2 as an external comparator. Keep their original confidence measures separate from TOPICS heuristics until validation supports combining them.</p>
+
+<p>This assessment covers heterobifunctional PROTAC structure prediction and evidence available through 12 September 2026. Molecular glues and cellular degradation prediction are adjacent tasks with different input assumptions. The quantitative baseline is TOPICS commit <code>b2ae904bcd605b58c2e29e533e16305d8d2e5cf9</code>; the new audit evaluates saved coordinates without changing generation or ranking. Improvements below are proposals, not measured performance gains.</p>
+
+<h2 id="2-what-the-current-controls-establish">2. What the current controls establish</h2>
+
+<h3 id="structural-accuracy-and-physical-validity">Structural accuracy and physical validity</h3>
+
+<p>Each control contains 96 accepted conformers: 32 per seed, using seeds 42, 43 and 44. Both protein conformations and local binding poses originate from the same ternary crystal, making this an optimistic retrospective reconstruction task. The native relative arrangement is withheld from assembly and ranking, but these are not independent binary-input or blind predictions. The existing <a href="VALIDATION.md">validation record</a> documents the experiment and limitations.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Measurement</th>
+  <th style="text-align:right;">5T35: BRD4 BD2 / MZ1 / VHL</th>
+  <th style="text-align:right;">6BOY: BRD4 BD1 / dBET6 / CRBN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Crystal resolution, Å</td>
+  <td style="text-align:right;">2.70</td>
+  <td style="text-align:right;">3.33</td>
+</tr>
+<tr>
+  <td>Rank-1 E3 Cα RMSD after fitting POI, Å</td>
+  <td style="text-align:right;">51.18</td>
+  <td style="text-align:right;">48.88</td>
+</tr>
+<tr>
+  <td>Lowest sampled E3 Cα RMSD, Å</td>
+  <td style="text-align:right;">11.73</td>
+  <td style="text-align:right;">14.74</td>
+</tr>
+<tr>
+  <td>Rank of that lowest-RMSD candidate</td>
+  <td style="text-align:right;">24</td>
+  <td style="text-align:right;">6</td>
+</tr>
+<tr>
+  <td>Rank-1 PPI native-contact recall</td>
+  <td style="text-align:right;">0</td>
+  <td style="text-align:right;">0</td>
+</tr>
+<tr>
+  <td>Candidates with zero current clash pairs</td>
+  <td style="text-align:right;">0 / 96</td>
+  <td style="text-align:right;">0 / 96</td>
+</tr>
+<tr>
+  <td>Rank-1 current clash pairs</td>
+  <td style="text-align:right;">22</td>
+  <td style="text-align:right;">68</td>
+</tr>
+<tr>
+  <td>Lowest-E3-RMSD candidate clash pairs</td>
+  <td style="text-align:right;">238</td>
+  <td style="text-align:right;">176</td>
+</tr>
+<tr>
+  <td>Native complex current clash pairs</td>
+  <td style="text-align:right;">0</td>
+  <td style="text-align:right;">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>The current clash definition counts intercomponent heavy-atom pairs below 2 Å. It is a coarse geometric diagnostic, not a complete steric energy. Nevertheless, the native complexes pass this same check and every prediction fails it. A ranking change cannot create a clash-free pose absent from the sampled ensemble. Conversely, proximity to the native orientation does not guarantee a usable geometry: the lowest-RMSD candidates still have extensive overlaps.</p>
+
+<p>An independent audit with DockQ 2.1.3 gives the following PPI scores. Only rank 1, the existing lowest-E3-RMSD candidate, and native self-comparisons were evaluated with DockQ. These values therefore do not establish the maximum DockQ among all 96 predictions.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Audited candidate</th>
+  <th style="text-align:right;">DockQ</th>
+  <th style="text-align:right;">Interface RMSD, Å</th>
+  <th style="text-align:right;">Current total clash pairs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>5T35 rank 1</td>
+  <td style="text-align:right;">0.0159</td>
+  <td style="text-align:right;">11.81</td>
+  <td style="text-align:right;">22</td>
+</tr>
+<tr>
+  <td>5T35 rank 24, lowest E3 RMSD</td>
+  <td style="text-align:right;">0.3163</td>
+  <td style="text-align:right;">4.75</td>
+  <td style="text-align:right;">238</td>
+</tr>
+<tr>
+  <td>6BOY rank 1</td>
+  <td style="text-align:right;">0.0636</td>
+  <td style="text-align:right;">7.71</td>
+  <td style="text-align:right;">68</td>
+</tr>
+<tr>
+  <td>6BOY rank 6, lowest E3 RMSD</td>
+  <td style="text-align:right;">0.2088</td>
+  <td style="text-align:right;">4.90</td>
+  <td style="text-align:right;">176</td>
+</tr>
+<tr>
+  <td>Native self-comparison, either system</td>
+  <td style="text-align:right;">approximately 1</td>
+  <td style="text-align:right;">approximately 0</td>
+  <td style="text-align:right;">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>DockQ uses 0.23, 0.49 and 0.80 as boundaries for acceptable, medium and high PPI quality.<sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup> The 5T35 rank-24 candidate crosses the first boundary while remaining physically unsuitable. TOPICS must report structural agreement and physical validity together. DockQ's own clash count differs from TOPICS' all-component atom-pair count; their values must retain distinct names. DockQ also treats the larger E3 chain as receptor here, whereas the existing E3 RMSD fits POI first. The RMSDs are consequently not interchangeable.</p>
+
+<h3 id="ranking-mostly-considers-one-feature">Ranking mostly considers one feature</h3>
+
+<p><code>rank_candidates()</code> in <a href="../src/topics/engine.py">engine.py</a> sorts lexicographically by clash count, head-fit RMSD, negative PPI contact count, free-ligand MMFF energy, and candidate identifier. Later criteria only operate when all previous values tie. Clash counts are unique for 76/96 candidates in 5T35 and 88/96 in 6BOY; their placement is fixed before the other features matter. Even in a clash tie, a continuous head-fit value usually prevents contact or energy terms from influencing order.</p>
+
+<p>This behavior is reproducible, but it is not a balanced physical score. Within these two ensembles, descriptive Spearman correlations between head-fit RMSD and E3 error are approximately −0.05 and +0.03. They do not establish a general statistical result, but provide no support for treating this local fit as a global accuracy proxy. Raw PPI contacts also increase when proteins interpenetrate, making a larger contact count unsafe as an unconditional reward.</p>
+
+<h3 id="the-bound-ligand-groups-are-insufficiently-constrained">The bound ligand groups are insufficiently constrained</h3>
+
+<p>The examples fit a five-atom triazole ring on the POI side and five or six atoms on the E3 side. The complete PROTAC remains flexible during embedding and free-molecule minimization. A good fit for one ring cannot preserve all other atoms of the binding group or its exit-vector geometry.</p>
+
+<p>The audit independently fits each predicted protein onto its native counterpart and measures the ligand atoms associated with that local binding site. For this diagnostic only, an atom is included when it lies within 4 Å of its native protein and more than 5 Å from the other native protein. These reference-derived sets are not chemical fragment definitions and must never enter blind prediction inputs.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Rank-1 local diagnostic</th>
+  <th style="text-align:right;">5T35</th>
+  <th style="text-align:right;">6BOY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Maximum fitted small-ring RMSD, Å</td>
+  <td style="text-align:right;">0.277</td>
+  <td style="text-align:right;">0.352</td>
+</tr>
+<tr>
+  <td>POI-associated ligand atom count</td>
+  <td style="text-align:right;">17</td>
+  <td style="text-align:right;">15</td>
+</tr>
+<tr>
+  <td>POI-associated ligand RMSD, Å</td>
+  <td style="text-align:right;">4.11</td>
+  <td style="text-align:right;">1.03</td>
+</tr>
+<tr>
+  <td>E3-associated ligand atom count</td>
+  <td style="text-align:right;">20</td>
+  <td style="text-align:right;">16</td>
+</tr>
+<tr>
+  <td>E3-associated ligand RMSD, Å</td>
+  <td style="text-align:right;">7.50</td>
+  <td style="text-align:right;">4.61</td>
+</tr>
+</tbody>
+</table>
+
+<p>The loss of local binding geometry is demonstrated. How much each proposed constraint improves final docking remains to be tested. Nearly planar rings are not, by themselves, an invalid Kabsch fit: noncollinear planar points determine a proper rigid alignment. The main concern is the limited chemical coverage and the amplification of small orientation changes at distant protein atoms, not an established singular-matrix bug.</p>
+
+<h3 id="other-limitations-visible-in-the-code">Other limitations visible in the code</h3>
+
+<p><code>chemistry.py</code> minimizes isolated PROTAC conformers; its MMFF energy omits protein interactions and solvent. <code>geometry.py</code> counts distance contacts without donor/acceptor direction, charge, desolvation or atom-specific radii. <code>structures.py</code> removes non-amino-acid components from protein clouds, including waters and metals. No side-chain relaxation, protein-domain ensemble, clustering or bound-state strain assessment is implemented.</p>
+
+<p><code>benchmark.py</code> currently requires native PPI contacts and exact reference atom ordering. This is suitable for the two curated controls but will reject legitimate inputs requiring sequence mapping, missing-residue reconciliation or evaluation without a direct PPI interface. These are specific engineering limitations, not explanations that make the observed errors acceptable.</p>
+
+<h2 id="3-relevant-methods-and-the-strength-of-their-evidence">3. Relevant methods and the strength of their evidence</h2>
+
+<h3 id="established-docking-pipelines">Established docking pipelines</h3>
+
+<p>Rovers and Schapira's 2024 benchmark compares PRosettaC, MOE and ICM. Its central practical finding is that obtaining a near-native candidate and selecting it reliably remain distinct difficulties.<sup class="footnote-ref" id="fnref-2"><a href="#fn-2">2</a></sup> The accompanying public repository is a useful starting point for annotated controls and comparable input preparation.<sup class="footnote-ref" id="fnref-3"><a href="#fn-3">3</a></sup> Imported cases still need explicit review of chains, ligand completeness, assembly and experimental provenance.</p>
+
+<p>PRosettaC combines linker-derived restraints, protein docking, local refinement, PROTAC placement and clustering.<sup class="footnote-ref" id="fnref-4"><a href="#fn-4">4</a></sup> It supports the decision to add a protein-interface search rather than relying exclusively on free PROTAC conformations. Its public implementation depends on PatchDock, Rosetta, OpenBabel and scheduler-oriented scripts; the wrapper's MIT license does not settle the terms or installation requirements of those dependencies.<sup class="footnote-ref" id="fnref-5"><a href="#fn-5">5</a></sup> Use it as a benchmark comparator where practical, rather than make the entire stack a laptop dependency.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Method</th>
+  <th>Useful contribution to TOPICS</th>
+  <th>Qualification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>PRosettaC</td>
+  <td>Constrained protein docking, local refinement and cluster representatives</td>
+  <td>External dependencies; published success does not imply reliable rank 1.<sup class="footnote-ref" id="fnref-4"><a href="#fn-4">5</a></sup>, <sup class="footnote-ref" id="fnref-5"><a href="#fn-5">5</a></sup></td>
+</tr>
+<tr>
+  <td>Ignatov et al., 2023</td>
+  <td>Simultaneous interface and linker search using complementary half-linker conformational clouds</td>
+  <td>Twelve crystal structures; high-quality models among the top ten, with selection uncertainty. Ubiquitination filters are a separate biological assumption.<sup class="footnote-ref" id="fnref-6"><a href="#fn-6">6</a></sup></td>
+</tr>
+<tr>
+  <td>BOTCP, 2023</td>
+  <td>Bayesian optimization to use evaluations more selectively</td>
+  <td>Original method and bibliographic record identified; detailed runtime and deployment claims are not independently established here. Treat as a sampling design reference.<sup class="footnote-ref" id="fnref-7"><a href="#fn-7">7</a></sup></td>
+</tr>
+<tr>
+  <td>MEGA PROTAC, 2025</td>
+  <td>Fast docking proposals, inexpensive filters first, local search, contact clustering and rank aggregation</td>
+  <td>Twenty-two cases; comparisons include BOTCP before refinement. Filtering reduced the reported mean maximum DockQ from 0.646 to 0.554: early rejection can lose good candidates.<sup class="footnote-ref" id="fnref-8"><a href="#fn-8">8</a></sup></td>
+</tr>
+<tr>
+  <td>COMPASS, 2026</td>
+  <td>Linker compatibility and optional geometry of the complete ubiquitination machinery</td>
+  <td>Twenty crystal controls and a separate 112-PROTAC activity study. Published workflow includes Glide and lengthy initial PPI docking; unsuitable as an assumed cheap default.<sup class="footnote-ref" id="fnref-9"><a href="#fn-9">9</a></sup></td>
+</tr>
+</tbody>
+</table>
+
+<p>The reusable principle is to search linker compatibility and protein orientation together, retaining diverse candidates until enough evidence exists to reject them. It does not require copying an entire pipeline. A first implementation can use the installed RDKit and SciPy dependencies, while an external docking backend is evaluated separately.</p>
+
+<p>COMPASS reports 93% recall on degradation endpoints; recall is not precision or proof that a predicted structure is correct. Its initial protein docking and clustering took 18–24 hours per system; the faster assembly stage followed this preparation on a 32-core, 96-GB node. Its structural comparisons use selected cluster representatives and an E3-based alignment. These distinctions prevent comparing its headline numbers directly with TOPICS rank-1 E3 RMSD.<sup class="footnote-ref" id="fnref-9"><a href="#fn-9">9</a></sup></p>
+
+<h3 id="learned-ternary-generators-and-cofolding-models">Learned ternary generators and cofolding models</h3>
+
+<p>DeepTernary is the most directly relevant optional learned generator. The 2025 Nature Communications paper evaluates 22 PROTAC complexes using separate ligand-bound protein structures, samples 40 initial conformations, and ranks outputs by predicted aligned error. Its prominently reported mean DockQ of 0.65 should not be presented as rank-1 performance: the paper separately reports mean top-1 DockQ around 0.4. Training excludes known PROTACs and similar protein pairs under its stated split.<sup class="footnote-ref" id="fnref-10"><a href="#fn-10">10</a></sup> Reproduction on independently curated TOPICS inputs is needed before transferring any performance claim.</p>
+
+<p>The official repository supplies inference scripts, including a CPU route, and uses an Apache-2.0 code license. It also explicitly notes rigid chemical-handle constraints in conformational sampling.<sup class="footnote-ref" id="fnref-11"><a href="#fn-11">11</a></sup> This makes a small isolated evaluation worthwhile. Exact checkpoint provenance, package compatibility, memory peaks and run time on an 8-GB laptop GPU remain unmeasured; published second-scale inference is not an end-to-end local guarantee.</p>
+
+<p>PROflow explores learned iterative refinement with full PROTAC flexibility and synthetic training examples derived from protein complexes. It is a relevant 2024 workshop/preprint direction, but an official deployable checkpoint and reproducible local setup were not established in the available evidence. It should remain a research option rather than a first implementation dependency.<sup class="footnote-ref" id="fnref-12"><a href="#fn-12">12</a></sup></p>
+
+<p>The apparent disagreement between AlphaFold comparisons is substantially explained by inputs and metrics:</p>
+
+<ul>
+<li>A 2025 Scientific Reports comparison used an AlphaFold server protocol described with protein sequences; it does not establish performance for local, explicit-PROTAC conditioning. Accessory chains also affect aggregate interface scores.<sup class="footnote-ref" id="fnref-13"><a href="#fn-13">13</a></sup></li>
+<li>Dunlop et al. used explicit ligands and compared AF3 with Boltz-1. Their 62-entry collection contains <strong>48 ternary and 14 binary complexes</strong>, not 62 independent ternary predictions. Ligand representation and release date affected results; performance was poorer on later structures. The associated PROTACFold pipeline and data are useful references.<sup class="footnote-ref" id="fnref-14"><a href="#fn-14">14</a></sup></li>
+<li>Riepenhausen et al. benchmarked AF3 and Boltz-2 in 2026 on 25 PROTAC and 15 molecular-glue complexes. Boltz-2 performed better in their evaluation, but the supporting tables explicitly use the best RMSD and best DockQ among five samples. Confidence-selected results must be compared separately.<sup class="footnote-ref" id="fnref-15"><a href="#fn-15">15</a></sup></li>
+<li>Chen et al.'s 2026 comparison of Chai-1, AF2, AF3 and Protenix identifies remaining errors in relative protein orientation and PROTAC placement despite favorable whole-complex results. Only the accessible abstract and data-availability description support that summary; no detailed leaderboard is inferred.<sup class="footnote-ref" id="fnref-16"><a href="#fn-16">16</a></sup></li>
+</ul>
+
+<p>The recommendation is to benchmark DeepTernary for the existing binary-structure workflow and Boltz-2 for a sequence-plus-ligand workflow. Use AF3 and Chai-1/Protenix as additional external comparators if resources permit. Do not choose a universal winner by combining incompatible reported averages. A model supplied with two bound binary poses and a model supplied with sequences solve different input problems.</p>
+
+<h2 id="4-proposed-changes-to-the-scientific-pipeline">4. Proposed changes to the scientific pipeline</h2>
+
+<h3 id="complete-chemical-head-definitions-and-constrained-linkers">Complete chemical head definitions and constrained linkers</h3>
+
+<p>Extend the input schema with explicit POI-head, E3-head and linker atom membership, attachment bonds, stereochemistry and local bound poses. Require complete, nonoverlapping atom maps covering the molecule; display ambiguous mappings for correction. Preserve schema-1 inputs as a clearly labeled legacy mode. Provide general SDF/SMILES input without requiring a PROTAC already present in the CCD.</p>
+
+<p>For each head, preserve its intramolecular geometry and its relationship to the associated protein. The relative transform between the two protein–head units must remain an unknown to be sampled. In particular, applying coordinate constraints to both heads in their original ternary reference frame would leak the answer and is prohibited.</p>
+
+<p>Compare two generators using identical chemical inputs and budgets. The first retains complete head geometry while sampling the linker to propose relative protein positions. The second proposes protein–head orientations and solves linker closure subject to bond, angle, torsion and chirality constraints. Share the feasibility checks and output format. Start with small batches and explicit failure reasons; increase sampling only when it adds distinct feasible solutions.</p>
+
+<p>RDKit already supports constrained embedding and positional restraints during minimization. Its documentation explains that distance-based coordinate maps do not always preserve exact coordinates, and subsequent unconstrained minimization can move the constrained core.<sup class="footnote-ref" id="fnref-17"><a href="#fn-17">17</a></sup> Check the complete heads after both embedding and refinement; do not assume that supplying <code>coordMap</code> completes the task. Retain TOPICS' chirality checks, including at newly interpreted attachment sites.</p>
+
+<h3 id="validity-filtering-and-limited-refinement">Validity filtering and limited refinement</h3>
+
+<p>Replace the universal distance threshold as the sole physical criterion with typed nonbonded overlaps, appropriate exclusions, bond/angle plausibility, ring planarity, stereochemistry and complete-head pose preservation. Retain the old count for baseline comparison. Separate protein–protein, POI–PROTAC and E3–PROTAC checks so failures remain interpretable.</p>
+
+<p>PoseBusters provides established chemical and geometric validation for predicted ligand poses.<sup class="footnote-ref" id="fnref-18"><a href="#fn-18">18</a></sup> Evaluate it as an optional audit tool and explicitly define which checks apply to large bifunctional ligands and retained cofactors. PPI overlap checks remain necessary in addition to ligand validation. A failed checker or unparameterized atom must become a recorded failure, not a zero penalty.</p>
+
+<p>Refine only diverse candidates that pass coarse feasibility checks. Begin with constrained ligand minimization, then add local side-chain relaxation while restraining the protein backbone and preserving each head's binding geometry. Use compatible protein and small-molecule force fields with explicit protonation, charges and metal treatment. Avoid arbitrary protein truncation without specifying boundary conditions; local flexibility can be restricted while retaining the full interaction environment.</p>
+
+<p>OpenMM supplies bounded local energy minimization; an explicit iteration limit is needed because its default permits unlimited iterations.<sup class="footnote-ref" id="fnref-19"><a href="#fn-19">19</a></sup> A local minimizer can relieve nearby steric problems but is not expected to repair a protein oriented tens of Å from the target pose. Long molecular dynamics or MM/GBSA across hundreds of invalid candidates should therefore be deferred. If MD is later used, evaluate predefined hypotheses on several seeds and report instability as well as stability.</p>
+
+<h3 id="ranking-clustering-and-confidence">Ranking, clustering and confidence</h3>
+
+<p>Use physical feasibility as an explicit gate, then rank feasible candidates with a small documented set of features: ligand strain relative to a same-protomer reference ensemble, typed interactions, buried surface and unsatisfied polar groups, local binding-pose distortion and interface complementarity. Free-ligand MMFF energies from different molecules or protonation states are not directly comparable binding scores.</p>
+
+<p>An initial consensus ranking or Pareto selection can avoid mixing unrelated units, but remains a heuristic requiring validation. Do not fit arbitrary weights on 5T35 and 6BOY. Introduce a learned ranker only after obtaining sufficiently diverse systems, with system-grouped validation. Preserve individual feature values and rejection reasons in outputs.</p>
+
+<p>Cluster feasible complexes in a consistent protein frame using interface geometry or interaction fingerprints. Return representatives from distinct clusters rather than ten near-duplicates. ProLIF can encode typed molecular interactions and provides a reference for interpretable contact analysis.<sup class="footnote-ref" id="fnref-20"><a href="#fn-20">20</a></sup> Contact fingerprints used for prediction may come from known binary poses or predicted candidates; native ternary contact recovery belongs exclusively to evaluation.</p>
+
+<p>Represent uncertainty through ensemble diversity, independent-seed agreement, validity flags and measured calibration on held-out systems. Cluster population from biased conformer sampling is not a Boltzmann population. PAE, ipTM and docking scores are not automatically probabilities of structural correctness or degradation.</p>
+
+<h2 id="5-benchmark-design-that-can-establish-improvement">5. Benchmark design that can establish improvement</h2>
+
+<h3 id="inputs-assemblies-and-exclusions">Inputs, assemblies and exclusions</h3>
+
+<p>Freeze an annotated candidate inventory from the Rovers benchmark, DeepTernary input pairs, PROTACFold and the 2026 studies. These collections overlap; their sizes must not be added. Aim to curate 20–40 eligible, structurally diverse ternary cases initially, subject to actual input quality. Record the number retained after review rather than forcing a target count.</p>
+
+<p>Keep 5T35 and 6BOY as development and regression controls. Separate matched bound-component reconstruction from prediction using independent binary structures, and separate both from apo or predicted-protein inputs. Identify biological assembly, author and label chain IDs, residue mapping, ligand atom correspondence, alternate conformers, occupancy, unresolved linker atoms and experimental quality. Explicitly resolve binary complexes and molecular glues into other tasks.</p>
+
+<p>Preserve structural cofactors when biologically justified. Evaluate the POI–E3 interface independently of accessory chains; optionally report full-assembly compatibility as an additional endpoint. Cases without direct native PPI contacts require a documented metric fallback rather than automatic exclusion or a fabricated zero. The reported 8QJR arrangement is a useful curation candidate for this boundary; its PDB entry and associated experiment should be checked directly before eligibility is decided.<sup class="footnote-ref" id="fnref-9"><a href="#fn-9">20</a></sup>, <sup class="footnote-ref" id="fnref-21"><a href="#fn-21">21</a></sup></p>
+
+<h3 id="separation-from-development-and-training-data">Separation from development and training data</h3>
+
+<p>Group related structures by protein pair, target family and degrader scaffold/linker series before creating development, validation and final test partitions. Repeated crystal copies or near-identical analogues must remain in the same group. Report ligase-specific performance and include non-bromodomain targets. If data permit, add leave-family-out and temporal challenges rather than relying on a random PDB split.</p>
+
+<p>For pretrained models, record checkpoint hashes, training cutoffs, available cluster exclusions and similarity to training structures. A later release date alone does not establish novelty: homologous proteins, related complexes and chemical dictionaries may carry overlapping information. Unknown training membership must be labeled unknown. Native-coordinate CCD features, idealized dictionary features and SMILES-generated coordinates also require separate provenance.</p>
+
+<p>Decide the final test cases and success definitions before changing scientific scoring. After an algorithm or threshold is selected on validation data, freeze it and evaluate the final test once. A failed test is reported and becomes historical evidence; subsequent development needs a fresh protected assessment.</p>
+
+<h3 id="metrics-and-statistical-unit">Metrics and statistical unit</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Question</th>
+  <th>Required endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Can the generator reach a good structure?</td>
+  <td>Oracle success among all candidates within a fixed budget; best DockQ and ligand RMSD, clearly reference-selected</td>
+</tr>
+<tr>
+  <td>Does ranking find it?</td>
+  <td>Success@1, @5 and @10 for ranked cluster representatives; conditional success when the ensemble contains a qualifying candidate</td>
+</tr>
+<tr>
+  <td>Is the proposed complex physically usable?</td>
+  <td>Valid-pose fraction, component-specific clashes, head preservation, chemistry and parameterization failures</td>
+</tr>
+<tr>
+  <td>Where is the error?</td>
+  <td>PPI DockQ, iRMSD, Fnat; role-defined partner RMSD; binding-site-aligned and symmetry-aware ligand RMSD</td>
+</tr>
+<tr>
+  <td>Does it generalize?</td>
+  <td>System-level distributions by ligase, target family, chemical series and input difficulty</td>
+</tr>
+<tr>
+  <td>Is it efficient?</td>
+  <td>End-to-end elapsed time, CPU time, RAM/VRAM peak, proposals and accepted clusters per budget</td>
+</tr>
+</tbody>
+</table>
+
+<p>Predefine a primary structural endpoint such as rank-1 PPI DockQ ≥0.23 and report the stricter ≥0.49 endpoint separately. Add a joint endpoint requiring chemical validity and a preregistered ligand pose tolerance; 2 Å is a useful initial convention for testing, not a proven universal threshold for full PROTACs. Report head and linker errors separately and use symmetry mappings that preserve chemical identity and stereochemistry.</p>
+
+<p>Compute confidence intervals by resampling independent systems or chemical/protein-family groups, not the 96 correlated conformers of a single complex. Count timeouts, preparation failures and zero-feasible-pose outcomes in the eligible-system denominator. Present paired changes from the baseline, confidence intervals and failure cases. With only two controls, an overall accuracy percentage or a trained confidence model would be misleading.</p>
+
+<h2 id="6-implementation-sequence-and-decision-gates">6. Implementation sequence and decision gates</h2>
+
+<p>The following effort ranges are engineering estimates for one contributor, excluding scientific uncertainty, large downloads and external computations. They are not delivery promises or expected effect sizes. The operational checklist is in <a href="ACCURACY_PLAN.md">ACCURACY_PLAN.md</a>.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Phase</th>
+  <th>Work</th>
+  <th>Estimated effort</th>
+  <th>Gate before advancing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P0</td>
+  <td>Evaluation adapter, atom/residue mapping, frozen benchmark manifest, split and budget definitions</td>
+  <td>3–5 working days</td>
+  <td>Native identity and rigid-transform invariance pass; invalid/empty cases report correctly; no reference enters prediction</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>Chemical head/linker partition, complete-head constraints, two constrained sampling variants</td>
+  <td>5–8 days</td>
+  <td>Head geometry and stereochemistry survive each stage; feasible yield and oracle performance are measured on development/validation</td>
+</tr>
+<tr>
+  <td>P2</td>
+  <td>Coarse PPI proposals, linker closure, selective local refinement and diversity clustering</td>
+  <td>5–10 days</td>
+  <td>Improvement exceeds sampling noise under matched budget; chemistry and known binding modes are retained</td>
+</tr>
+<tr>
+  <td>P3</td>
+  <td>Physical feature ranking and isolated DeepTernary comparison; optional Boltz-2 comparator</td>
+  <td>4–7 days</td>
+  <td>Rank-1/5 gains reproduce on validation groups; resource ceilings and preparation failures are recorded</td>
+</tr>
+<tr>
+  <td>P4</td>
+  <td>Frozen test evaluation, confidence reporting, publication figures and reproducibility package</td>
+  <td>3–5 days</td>
+  <td>All eligible cases accounted for; paired uncertainty reported; source/version traceability complete</td>
+</tr>
+</tbody>
+</table>
+
+<p>Total sequential engineering scope is approximately 4–7 working weeks, with P3 model evaluation possible after P0 if it does not consume the resources needed for P1/P2. If P1 produces no feasible conformers, diagnose chemical constraints and closure before increasing scale. If feasible near-native structures exist but rank poorly, prioritize P3 scoring. If all generators fail one family, inspect input quality and protein flexibility before adding more score features.</p>
+
+<p>Useful ablations are: unchanged baseline; complete-head constraints only; constraints plus alternative sampling; addition of local refinement; addition of clustering/ranking; learned generator with its native ranking; learned generator plus the same TOPICS validation/refinement. Keep inputs, evaluation and compute accounting fixed. Re-run the original baseline only when the measurement method changes, and retain both old and new metric versions.</p>
+
+<h2 id="7-resource-and-integration-strategy">7. Resource and integration strategy</h2>
+
+<p>Retain CPU operation as the default portable route. Use one or two compute threads, bounded batches and a wall-time limit for routine exploration. A proposed pilot budget is two minutes per control in the conservative mode and ten minutes in an explicitly selected extended mode, to be revised from measured completion rates. These are experimental budgets, not a claim that the full planned pipeline currently meets them.</p>
+
+<p>The existing four-conformer parity check took 2.82 seconds on CPU and 2.84 seconds with CUDA distances. This small experiment shows numerical agreement, not a GPU speed advantage. Profile conformer generation, scoring, refinement and reporting separately before optimizing. CPU neighbor searches and cached static protein features may help short-range scoring more than transferring small distance blocks to a GPU. Do not change cutoff definitions when changing the search algorithm.</p>
+
+<p>For learned models or OpenMM, use one GPU job at a time, batch size one initially, memory preflight, cancellation and restartable outputs. Measure peak VRAM on the actual 8-GB GPU before setting an admission limit, leaving headroom for the display and other processes. OpenMM exposes thread limits and CUDA synchronization/precision controls.<sup class="footnote-ref" id="fnref-22"><a href="#fn-22">22</a></sup> Numerical precision affects computational reproducibility; it does not by itself correct an inaccurate physical model. Hardware temperature cannot be guaranteed by a fixed pause, so describe resource limits honestly and use telemetry only where available.</p>
+
+<p>Install optional engines in isolated environments and call their documented interfaces. Boltz's current official repository states that code and weights are MIT-licensed and recommends a fresh environment.<sup class="footnote-ref" id="fnref-23"><a href="#fn-23">23</a></sup> The AF3 repository currently labels its code Apache-2.0 and provides separate model-weight and output terms, superseding older papers' code-license descriptions.<sup class="footnote-ref" id="fnref-24"><a href="#fn-24">24</a></sup> Check the exact versions and terms before redistribution. Do not bundle checkpoints, start Docker automatically, or assume a paper's cluster timing applies to a laptop.</p>
+
+<p>The minimal near-term dependency change is an optional evaluation environment for DockQ/PoseBusters. Complete-head sampling can start with existing dependencies. Add OpenMM, a learned generator or an external docking engine only when the corresponding experiment reaches its gate.</p>
+
+<h2 id="8-reporting-and-limits-of-interpretation">8. Reporting and limits of interpretation</h2>
+
+<p>The interactive report should expose cluster representatives, the three interfaces, complete-head deviations, chemical validity, feature-level ranking and failed-stage counts. Reference overlays and native-contact recovery should appear only for evaluation runs. Ordinary predictions should show model confidence and ensemble disagreement without labeling unknown native accuracy as measured.</p>
+
+<p>The publication package should include an input/split inventory, case-level CSV/JSON, failure table, success@k curves with system-level intervals, budget-versus-success curves, paired method comparisons, and representative structural overlays selected by a stated rule. Export vector SVG/PDF and high-resolution raster alternatives with units, accessible colors and independently reproducible source data. Preserve the legacy validation figures as the baseline rather than replacing them with an improved run under the same name.</p>
+
+<p>Structural agreement, ternary binding, cooperativity, ubiquitination and cellular degradation remain separate endpoints. A geometrically plausible pose does not supply DC50, Dmax, binding free energy or a kinetic rate. Buried surface and proximity to an E2/ubiquitin assembly may be useful descriptors, but should not become universal activity thresholds. Any subsequent activity model needs matched assays, concentrations, cell lines, time points and negative examples, and must be evaluated separately from the structural benchmark.</p>
+
+<h2 id="9-reproducible-audit">9. Reproducible audit</h2>
+
+<p>The machine-readable evidence is <a href="accuracy-audit.json">accuracy-audit.json</a>. The accompanying <a href="audit_accuracy.py">audit_accuracy.py</a> reads existing bound-component runs, checks identities and saved clash counts, evaluates selected poses, and records input/output hashes. It does not create predictions or change their ordering. Native self-comparisons validate the export and metric invocation.</p>
+
+<p>Run the script with the TOPICS Python environment and a separate Python environment containing <code>DockQ==2.1.3</code>; supply paths appropriate to the installation:</p>
+
+<div class="codehilite">
+<pre><span></span><code>python<span class="w"> </span>docs/audit_accuracy.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--case-root<span class="w"> </span>runs/5t35<span class="w"> </span>--case-root<span class="w"> </span>runs/6boy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>&lt;new-audit-file.json&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dockq-python<span class="w"> </span>&lt;evaluation-environment&gt;/bin/python
+</code></pre>
+</div>
+
+<p>On Windows, use the evaluation environment's <code>Scripts/python.exe</code>. Omitting <code>--dockq-python</code> runs the local geometry diagnostics only. Raw run folders remain outside the versioned evidence; the original controls can be regenerated using the instructions and inputs in <code>VALIDATION.md</code>. The six DockQ calculations here are an audit, not the complete evaluation adapter proposed in P0.</p>
+
+<h2 id="sources">Sources</h2>
+
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn-1">
+<p>C. Mirabello and B. Wallner. “DockQ v2: improved automatic quality measure for protein multimers, nucleic acids, and small molecules.” <em>Bioinformatics</em> 40, btae586 (2024). <a href="https://doi.org/10.1093/bioinformatics/btae586">Paper</a>; <a href="https://github.com/wallnerlab/DockQ">official implementation and score categories</a>. Audit version: 2.1.3.&#160;<a href="#fnref-1" class="footnoteBackLink" title="Jump back to footnote 1 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-2">
+<p>E. Rovers and M. Schapira. “Benchmarking Methods for PROTAC Ternary Complex Structure Prediction.” <em>JCIM</em> 64, 6162–6173 (2024). <a href="https://doi.org/10.1021/acs.jcim.4c00426">DOI</a>. Comparative abstract and supporting-material description; no unverified runtime table reproduced.&#160;<a href="#fnref-2" class="footnoteBackLink" title="Jump back to footnote 2 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-3">
+<p>E. Rovers. “PROTAC ternary complex benchmark.” <a href="https://github.com/ERovers/PROTAC_ternary_complex_benchmark">Research repository</a>. Dataset provenance and preprocessing reference; accessed September 2026.&#160;<a href="#fnref-3" class="footnoteBackLink" title="Jump back to footnote 3 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-4">
+<p>D. Zaidman, J. Prilusky and N. London. “PRosettaC: Rosetta Based Modeling of PROTAC Mediated Ternary Complexes.” <em>JCIM</em> 60, 4894–4903 (2020). <a href="https://doi.org/10.1021/acs.jcim.0c00589">DOI</a>.&#160;<a href="#fnref-4" class="footnoteBackLink" title="Jump back to footnote 4 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-5">
+<p>LondonLab. “PRosettaC.” <a href="https://github.com/LondonLab/PRosettaC">Official repository, README and license</a>. Dependency and interface documentation; accessed September 2026.&#160;<a href="#fnref-5" class="footnoteBackLink" title="Jump back to footnote 5 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-6">
+<p>M. Ignatov et al. “High Accuracy Prediction of PROTAC Complex Structures.” <em>JACS</em> 145, 7123–7135 (2023). <a href="https://doi.org/10.1021/jacs.2c09387">DOI</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10240388/">author manuscript</a>.&#160;<a href="#fnref-6" class="footnoteBackLink" title="Jump back to footnote 6 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-7">
+<p>A. Rao et al. “Bayesian optimization for ternary complex prediction (BOTCP).” <em>Artificial Intelligence in the Life Sciences</em> 3, 100072 (2023). <a href="https://doi.org/10.1016/j.ailsci.2023.100072">DOI</a>; <a href="https://hfooladi.github.io/publications/2023-12-01-botcp">author publication record</a>. Detailed deployment evidence remains incomplete.&#160;<a href="#fnref-7" class="footnoteBackLink" title="Jump back to footnote 7 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-8">
+<p>“MEGA PROTAC, MEGA DOCK-based PROTAC mediated ternary complex formation pipeline with sequential filtering and rank aggregation.” <em>Scientific Reports</em> (2025). <a href="https://www.nature.com/articles/s41598-024-83558-2">Paper</a>; <a href="https://github.com/yauz3/MEGA-PROTAC">research code</a>.&#160;<a href="#fnref-8" class="footnoteBackLink" title="Jump back to footnote 8 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-9">
+<p>S. Sueron et al. “COMPASS: A Computational Pipeline to Identify Linkers Predicting Ubiquitinable PROTAC-Induced Ternary Complexes.” <em>ChemMedChem</em> (15 July 2026). <a href="https://doi.org/10.1002/cmdc.70385">Paper</a>; <a href="https://github.com/ssueron/compass">research code</a>. Structural and activity endpoints are distinct.&#160;<a href="#fnref-9" class="footnoteBackLink" title="Jump back to footnote 9 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-10">
+<p>F. Xue et al. “SE(3)-equivariant ternary complex prediction towards target protein degradation.” <em>Nature Communications</em> 16, 5514 (1 July 2025). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12216337/">Full paper</a>. Sections on PROTAC evaluation and ranking distinguish the headline and top-1 results.&#160;<a href="#fnref-10" class="footnoteBackLink" title="Jump back to footnote 10 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-11">
+<p>DeepTernary authors. <a href="https://github.com/youqingxiaozhua/DeepTernary">Official repository</a>. Inference scripts, input-pair data description, chemical-handle constraints and code license; accessed September 2026.&#160;<a href="#fnref-11" class="footnoteBackLink" title="Jump back to footnote 11 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-12">
+<p>B. Qiang, W. Shi, Y. Song and M. Wu. “PROflow: An iterative refinement model for PROTAC-induced structure prediction.” GEM workshop, ICLR 2024 / preprint. <a href="https://arxiv.org/abs/2405.06654">arXiv</a>. Deployment not verified.&#160;<a href="#fnref-12" class="footnoteBackLink" title="Jump back to footnote 12 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-13">
+<p>“PRosettaC outperforms AlphaFold3 for modeling PROTAC ternary complexes.” <em>Scientific Reports</em> 15, 37620 (28 October 2025). <a href="https://www.nature.com/articles/s41598-025-21502-8">Paper and input protocol</a>.&#160;<a href="#fnref-13" class="footnoteBackLink" title="Jump back to footnote 13 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-14">
+<p>N. Dunlop, F. Erazo, F. Jalalypour and R. Mercado. “Predicting PROTAC-mediated ternary complexes with AlphaFold3 and Boltz-1.” <em>Digital Discovery</em> (27 October 2025). <a href="https://doi.org/10.1039/D5DD00300H">DOI</a>; <a href="https://research.chalmers.se/publication/549755/file/549755_Fulltext.pdf">institutional full text</a>; <a href="https://github.com/NilsDunlop/PROTACFold">PROTACFold</a>. Section 2.2 identifies 48 ternary and 14 binary entries.&#160;<a href="#fnref-14" class="footnoteBackLink" title="Jump back to footnote 14 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-15">
+<p>L. Riepenhausen, A.-C. Sarnow, D. Robaa and W. Sippl. “AI-Based Prediction of PROTAC- and Molecular Glue-Mediated Ternary Complexes: A Comparative Evaluation of AlphaFold 3 and Boltz-2.” <em>Archiv der Pharmazie</em> 359, e70225 (14 March 2026). <a href="https://doi.org/10.1002/ardp.70225">Paper</a>. Supporting-table description specifies best-of-five metrics.&#160;<a href="#fnref-15" class="footnoteBackLink" title="Jump back to footnote 15 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-16">
+<p>H. Chen et al. “Benchmarking Deep Learning for PROTAC Ternary Complex Prediction.” <em>Proteins</em> 94, 1329–1340 (2026; online 3 February). <a href="https://doi.org/10.1002/prot.70117">Publisher abstract and data availability</a>. Detailed full-text methods not used to make quantitative claims.&#160;<a href="#fnref-16" class="footnoteBackLink" title="Jump back to footnote 16 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-17">
+<p>G. Landrum. “More on constrained embedding.” RDKit developer tutorial (10 February 2023). <a href="https://greglandrum.github.io/rdkit-blog/posts/2023-02-10-more-on-constrained-embedding.html">Technical explanation and examples</a>.&#160;<a href="#fnref-17" class="footnoteBackLink" title="Jump back to footnote 17 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-18">
+<p>M. Buttenschoen, G. M. Morris and C. M. Deane. “PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences.” <em>Chemical Science</em> 15, 3130–3139 (2024). <a href="https://doi.org/10.1039/D3SC04185A">DOI</a>; <a href="https://ora.ox.ac.uk/objects/uuid%3A898f0351-637a-454d-a51a-247277b8f4b4/files/sqj72p900h">author institutional manuscript</a>.&#160;<a href="#fnref-18" class="footnoteBackLink" title="Jump back to footnote 18 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-19">
+<p>OpenMM contributors. “LocalEnergyMinimizer.” <a href="https://docs.openmm.org/latest/api-python/generated/openmm.openmm.LocalEnergyMinimizer.html">Official API documentation</a>. Local optimization and iteration controls; accessed September 2026. Pin a stable release during implementation.&#160;<a href="#fnref-19" class="footnoteBackLink" title="Jump back to footnote 19 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-20">
+<p>C. Bouysset and S. Fiorucci. “ProLIF: a library to encode molecular interactions as fingerprints.” <em>Journal of Cheminformatics</em> 13, 72 (2021). <a href="https://doi.org/10.1186/s13321-021-00548-6">Paper</a>.&#160;<a href="#fnref-20" class="footnoteBackLink" title="Jump back to footnote 20 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-21">
+<p>RCSB PDB. “8QJR: BRG1 bromodomain in complex with VBC via compound 17.” <a href="https://www.rcsb.org/structure/8QJR">Entry and primary citation</a>. M. Berlin et al., <em>J. Med. Chem.</em> 67, 1262–1313 (2024), <a href="https://doi.org/10.1021/acs.jmedchem.3c01781">DOI</a>. Candidate boundary-case provenance, not an audited TOPICS result.&#160;<a href="#fnref-21" class="footnoteBackLink" title="Jump back to footnote 21 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-22">
+<p>OpenMM contributors. “Platform-Specific Properties.” <a href="https://docs.openmm.org/latest/userguide/library/04_platform_specifics.html">Official user guide</a>. CPU threads, CUDA precision, synchronization and determinism; accessed September 2026.&#160;<a href="#fnref-22" class="footnoteBackLink" title="Jump back to footnote 22 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-23">
+<p>Boltz contributors. <a href="https://github.com/jwohlwend/boltz">Official repository</a>. Current model interfaces, environment guidance and code/weight license statement; accessed September 2026.&#160;<a href="#fnref-23" class="footnoteBackLink" title="Jump back to footnote 23 in the text.">&#8617;</a></p>
+</li>
+
+<li id="fn-24">
+<p>Google DeepMind. <a href="https://github.com/google-deepmind/alphafold3">AlphaFold 3 repository</a>. Current inference code and separate weight/output terms; accessed September 2026. Historical paper descriptions may reflect earlier distribution terms.&#160;<a href="#fnref-24" class="footnoteBackLink" title="Jump back to footnote 24 in the text.">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</main></body></html>

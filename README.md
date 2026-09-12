@@ -6,6 +6,10 @@ crystallographic controls, standalone HTML reports and exportable scientific fig
 **Version 0.1 is a structural baseline, not a validated predictor.** Its initial controls show
 substantial prediction errors. See [measured results](docs/VALIDATION.md).
 
+The [accuracy research](docs/ACCURACY_RESEARCH.md) audits the baseline and compares published methods.
+Read the [implementation plan](docs/ACCURACY_PLAN.md), [offline report](docs/ACCURACY_RESEARCH.html)
+or [PDF](docs/ACCURACY_RESEARCH.pdf). Proposed accuracy improvements are not yet implemented.
+
 ## Install and start
 
 Python 3.11+ is required. From the project directory:

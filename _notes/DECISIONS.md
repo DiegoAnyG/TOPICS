@@ -2,6 +2,22 @@
 
 Newest first. Record each decision, its reason and its cost. Announce and document reversals.
 
+## 2026-09-12 — Accuracy roadmap
+
+Decision: establish independent metrics and a protected benchmark before modifying sampling
+or ranking; prioritize complete bound-head preservation and coupled linker/interface search.
+Reason: the audit demonstrates lost local ligand geometry, universal current clashes and
+ranking dominated by clash counts. Merely increasing conformer count is not a demonstrated remedy.
+Cost: benchmark curation and chemical mapping precede more visible prediction features.
+
+Decision: keep learned engines optional and compare native model ranking separately from
+TOPICS postprocessing. DeepTernary and Boltz-2 are proposed experiments, not installed backends.
+Reason: published performance depends on inputs, training overlap and selection protocol.
+Cost: isolated environments and hardware measurements are needed before integration.
+
+The measured baseline remains unchanged. This roadmap schedules its improvement without
+retracting the baseline decision or claiming an accuracy gain before validation.
+
 ## 2026-09-11 — Independent project
 
 Decision: keep TOPICS outside PoliScreen, with its own AGENTS.md and working notes.

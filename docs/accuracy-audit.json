@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "gemmi": "0.7.5",
+    "rdkit": "2026.3.6",
+    "DockQ": "2.1.3"
+  },
+  "script_sha256": "beb6cb634db6cb7473164da4b266d26a5e00adfd6fbc4d5c75ba0fb376ce0261",
+  "cases": {
+    "5t35": {
+      "input_hashes": {
+        "config": "b5f31e15248492af0f07385b8825390e957ce79eee17aca7eb8653b1b58fb755",
+        "ligand_ccd": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+        "poi": "743679c6b81bf7fda8179c8a9745e2d5d9f881cf7b3f07612f7c7f261f1de535",
+        "e3": "118904b351c7e7ce0c6ed374743fc0a4d314aeec86204255e5a08fe3d5f5a9d0"
+      },
+      "file_hashes": {
+        "ensemble.npz": "30f3504e9f9b5abbaea6edeacf23dd0aff500a122604c967744470a37d472a61",
+        "candidates.csv": "6d9b61c2e3b1cc86e19311e14e13892ea557aedd2f35588597e6ca2b5e6b026d",
+        "evaluation.json": "ee7ebbf3504f4244e9c3b8443a00a6dcd03947c69d775a2c62101669579775ed",
+        "manifest.json": "358af0088909e1ff2a5676bac0b0403c7a34235a985ebb5df266e282f09f3f0b"
+      },
+      "reference_sha256": "dbbb9672f42b2121f8c1b4ee13274691bd0b437fe54f0ec254da8d065726b423",
+      "candidate_count": 96,
+      "zero_clash_candidates": 0,
+      "candidates_with_unique_clash_count": 76,
+      "correlations_to_e3_error_descriptive_only": {
+        "rank": 0.2964537996958165,
+        "clash_pairs": 0.2969250753411935,
+        "head_rmsd_A": -0.049600173631128806,
+        "ppi_contacts": 0.36057679271687665,
+        "energy_kcal_mol": -0.15913699903010736
+      },
+      "contact_atom_selection": "Native ligand atoms <=4 A from own protein and >5 A from the other; evaluation only",
+      "contact_atom_names": {
+        "poi": [
+          "CBB",
+          "CBA",
+          "OBP",
+          "CAY",
+          "OBO",
+          "CAX",
+          "CAW",
+          "NBL",
+          "CBU",
+          "OAI",
+          "CBE",
+          "NBK",
+          "NBJ",
+          "CCB",
+          "NCP",
+          "SBS",
+          "CBX"
+        ],
+        "e3": [
+          "CBZ",
+          "NBI",
+          "CAV",
+          "SBR",
+          "CCH",
+          "C",
+          "O",
+          "CA",
+          "CB",
+          "CG",
+          "OD1",
+          "CD2",
+          "N",
+          "CBW",
+          "OAK",
+          "CAE",
+          "NBN",
+          "CBT",
+          "OAH",
+          "CBD"
+        ]
+      },
+      "selected_candidates": {
+        "native": {
+          "candidate": "native",
+          "pairs": {
+            "ppi": {
+              "contacts": 15,
+              "clashes": 0
+            },
+            "poi_ligand": {
+              "contacts": 17,
+              "clashes": 0
+            },
+            "e3_ligand": {
+              "contacts": 17,
+              "clashes": 0
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 8.540868336510847e-15,
+            "e3": 2.9835392497022557e-14
+          },
+          "dockq": {
+            "AB": {
+              "DockQ": 0.999999999999992,
+              "F1": 1.0,
+              "iRMSD": 2.3134449793045157e-07,
+              "LRMSD": 1.4112406166378216e-07,
+              "fnat": 1.0,
+              "nat_correct": 15,
+              "nat_total": 15,
+              "fnonnat": 0,
+              "nonnat_count": 0,
+              "model_total": 15,
+              "clashes": 0,
+              "len1": 111,
+              "len2": 149,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        },
+        "top_ranked": {
+          "candidate": "s44_c15",
+          "pairs": {
+            "ppi": {
+              "contacts": 21,
+              "clashes": 15
+            },
+            "poi_ligand": {
+              "contacts": 18,
+              "clashes": 2
+            },
+            "e3_ligand": {
+              "contacts": 8,
+              "clashes": 5
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 4.10866007370878,
+            "e3": 7.502236998998493
+          },
+          "rank": 1,
+          "dockq": {
+            "AB": {
+              "DockQ": 0.015852257695311157,
+              "F1": 0.0,
+              "iRMSD": 11.813065553731084,
+              "LRMSD": 46.986247119299236,
+              "fnat": 0,
+              "nat_correct": 0,
+              "nat_total": 15,
+              "fnonnat": 1.0,
+              "nonnat_count": 21,
+              "model_total": 21,
+              "clashes": 3,
+              "len1": 111,
+              "len2": 149,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        },
+        "best_e3_rmsd": {
+          "candidate": "s42_c27",
+          "pairs": {
+            "ppi": {
+              "contacts": 158,
+              "clashes": 162
+            },
+            "poi_ligand": {
+              "contacts": 21,
+              "clashes": 39
+            },
+            "e3_ligand": {
+              "contacts": 23,
+              "clashes": 37
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 3.1345178906405073,
+            "e3": 2.9759982245431877
+          },
+          "rank": 24,
+          "dockq": {
+            "AB": {
+              "DockQ": 0.31630562576709437,
+              "F1": 0.09248554913294797,
+              "iRMSD": 4.749323174801887,
+              "LRMSD": 12.253156588787972,
+              "fnat": 0.5333333333333333,
+              "nat_correct": 8,
+              "nat_total": 15,
+              "fnonnat": 0.9493670886075949,
+              "nonnat_count": 150,
+              "model_total": 158,
+              "clashes": 32,
+              "len1": 111,
+              "len2": 149,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        }
+      },
+      "limitation": "DockQ is evaluated only for native, rank 1 and the best existing E3 RMSD candidate, not all candidates."
+    },
+    "6boy": {
+      "input_hashes": {
+        "config": "1b8cc4c861d207b4b1e296c129e81c535e8cc0c7087b9029d4cc52f08444b102",
+        "ligand_ccd": "d54c5e978045ccf6a3ffbd2bcff24964b42a5e1217c016f11b462bb4c854baf3",
+        "poi": "812b99108273e8fe485d0a3d9cfd07a8456296421b31d0b32a5e016f1288fd72",
+        "e3": "786bdaa6ff175a481a1bc7179e02e12572f8999cde205fccce8eb6a2ac9505ee"
+      },
+      "file_hashes": {
+        "ensemble.npz": "8577d246a13459803da4e3894e91cd1798728bc5ac5b19479f5adeb00034ab37",
+        "candidates.csv": "f5f9c98d7ef6de505b2cd5e63e6de4d91a15b6ed9b8986f53ac603d41560405f",
+        "evaluation.json": "83b12fda4eebbbe613040f03fb6637217ff7d2139d4fa98a2e193ae7f13c8719",
+        "manifest.json": "e0a7465801a915e993ea1057ad887fe8e431282c595410bdca76876eccc6fbc2"
+      },
+      "reference_sha256": "39fa4cc2bea75115cd4704f039f4628fe03a0aca0c4ae88935c6ff2d63202dea",
+      "candidate_count": 96,
+      "zero_clash_candidates": 0,
+      "candidates_with_unique_clash_count": 88,
+      "correlations_to_e3_error_descriptive_only": {
+        "rank": 0.4543897666526625,
+        "clash_pairs": 0.4545451462719344,
+        "head_rmsd_A": 0.027123081409939027,
+        "ppi_contacts": 0.4716048210855984,
+        "energy_kcal_mol": 0.04090505225890029
+      },
+      "contact_atom_selection": "Native ligand atoms <=4 A from own protein and >5 A from the other; evaluation only",
+      "contact_atom_names": {
+        "poi": [
+          "N",
+          "C",
+          "C1",
+          "C30",
+          "C31",
+          "C35",
+          "C38",
+          "C39",
+          "C4",
+          "C41",
+          "C5",
+          "N1",
+          "N6",
+          "O6",
+          "S"
+        ],
+        "e3": [
+          "C15",
+          "C20",
+          "C21",
+          "C22",
+          "C23",
+          "C24",
+          "C25",
+          "C26",
+          "C27",
+          "C28",
+          "N5",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5"
+        ]
+      },
+      "selected_candidates": {
+        "native": {
+          "candidate": "native",
+          "pairs": {
+            "ppi": {
+              "contacts": 41,
+              "clashes": 0
+            },
+            "poi_ligand": {
+              "contacts": 14,
+              "clashes": 0
+            },
+            "e3_ligand": {
+              "contacts": 14,
+              "clashes": 0
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 5.728578676879117e-15,
+            "e3": 7.944109290391274e-15
+          },
+          "dockq": {
+            "AB": {
+              "DockQ": 0.9999999999989222,
+              "F1": 1.0,
+              "iRMSD": 2.500810559576235e-06,
+              "LRMSD": 5.727049874818754e-06,
+              "fnat": 1.0,
+              "nat_correct": 41,
+              "nat_total": 41,
+              "fnonnat": 0,
+              "nonnat_count": 0,
+              "model_total": 41,
+              "clashes": 0,
+              "len1": 127,
+              "len2": 375,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        },
+        "top_ranked": {
+          "candidate": "s44_c30",
+          "pairs": {
+            "ppi": {
+              "contacts": 75,
+              "clashes": 45
+            },
+            "poi_ligand": {
+              "contacts": 15,
+              "clashes": 0
+            },
+            "e3_ligand": {
+              "contacts": 14,
+              "clashes": 23
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 1.031681292409732,
+            "e3": 4.609784601483442
+          },
+          "rank": 1,
+          "dockq": {
+            "AB": {
+              "DockQ": 0.06362487440161624,
+              "F1": 0.0,
+              "iRMSD": 7.7137864288447675,
+              "LRMSD": 19.889009409069438,
+              "fnat": 0,
+              "nat_correct": 0,
+              "nat_total": 41,
+              "fnonnat": 1.0,
+              "nonnat_count": 75,
+              "model_total": 75,
+              "clashes": 12,
+              "len1": 127,
+              "len2": 375,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        },
+        "best_e3_rmsd": {
+          "candidate": "s44_c8",
+          "pairs": {
+            "ppi": {
+              "contacts": 147,
+              "clashes": 165
+            },
+            "poi_ligand": {
+              "contacts": 19,
+              "clashes": 10
+            },
+            "e3_ligand": {
+              "contacts": 19,
+              "clashes": 1
+            }
+          },
+          "local_contact_atom_rmsd_A": {
+            "poi": 1.7605201895386946,
+            "e3": 0.8995622090266145
+          },
+          "rank": 6,
+          "dockq": {
+            "AB": {
+              "DockQ": 0.2087637039992025,
+              "F1": 0.14893617021276595,
+              "iRMSD": 4.904026109248181,
+              "LRMSD": 17.038630629155076,
+              "fnat": 0.34146341463414637,
+              "nat_correct": 14,
+              "nat_total": 41,
+              "fnonnat": 0.9047619047619048,
+              "nonnat_count": 133,
+              "model_total": 147,
+              "clashes": 31,
+              "len1": 127,
+              "len2": 375,
+              "class1": "ligand",
+              "class2": "receptor",
+              "is_het": false,
+              "chain1": "A",
+              "chain2": "B",
+              "chain_map": {
+                "A": "A",
+                "B": "B"
+              }
+            }
+          }
+        }
+      },
+      "limitation": "DockQ is evaluated only for native, rank 1 and the best existing E3 RMSD candidate, not all candidates."
+    }
+  }
+}
