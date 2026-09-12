@@ -59,3 +59,23 @@ Lesson: a PPI DockQ of acceptable quality can coexist with severe intercomponent
 structural similarity and chemical validity require separate, jointly reported endpoints.
 Lesson: preserve complete chemical binding groups; a small-ring alignment does not validate
 the pose of the rest of the ligand or the orientation of a distant protein domain.
+
+## 2026-09-12 — P0 delivery
+
+- Added a read-only independent ensemble adapter and an isolated sequential DockQ/PoseBusters worker.
+- Added explicit identity mapping, stereo-aware symmetry evaluation, component sterics and whole-head
+  metric definitions; uncurated complete heads remain unassessed instead of silently using anchors.
+- Curated 43 coordinate entries and full CCD definitions with 32 eligible crystal systems, protected
+  16/10/6 splits, declared assembly selections and explicit technical/scope exclusions.
+- Rechecked inventory source hashes, complete ligand identities, scaffold groups and native interfaces.
+- Re-evaluated all 192 existing candidates and exported independent interactive and vector reports.
+- Installed the locked optional environment separately; preserved original controls and generation code.
+
+Lesson: DockQ's low_memory API result omits iRMSD/LRMSD/Fnat; request full metrics and clear its
+model caches between poses to bound retained structures. Test the actual installed API boundary.
+Lesson: the DeepTernary published 22-complex list contains 14 unique PDB entries; copies are not
+independent systems. A software preparation exclusion is not evidence of an incomplete crystal ligand.
+
+Final validation: 15 tests passed and the existing CUDA check skipped in the sandbox; the isolated
+wheel and optional environment passed runtime checks. Both reports passed offline browser
+render/table/hover checks. All 46 original control files retained their hashes.

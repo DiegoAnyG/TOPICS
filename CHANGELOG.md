@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add independent DockQ/chemical assessment, complete identity mappings and offline scientific exports.
+- Freeze 32 protected crystal cases and assess all 192 baseline candidates with explicit validity limits.
+
 - Add a cited accuracy investigation and staged benchmark, sampling and ranking plan.
 - Add a reproducible DockQ and binding-site geometry audit of the saved crystal controls.
 

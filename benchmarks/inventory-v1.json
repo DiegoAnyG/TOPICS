@@ -1,0 +1,2633 @@
+{
+  "schema_version": 1,
+  "curated_on": "2026-09-12",
+  "sources": {
+    "inventory": {
+      "url": "https://github.com/ERovers/PROTAC_ternary_complex_benchmark",
+      "commit": "fe6312f22dd6c35b3fb85bc9e8a7547a72bd029a"
+    },
+    "deepternary_test_list": {
+      "url": "https://github.com/youqingxiaozhua/DeepTernary",
+      "commit": "827821dccca31a5918bd0355e2d6bf70c072b6dd"
+    }
+  },
+  "cases": [
+    {
+      "pdb_id": "5T35",
+      "source_url": "https://www.rcsb.org/structure/5T35",
+      "title": "The PROTAC MZ1 in complex with the second bromodomain of Brd4 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.7,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2017-03-08",
+      "citation_doi": "10.1038/nchembio.2329",
+      "coordinate_sha256": "b7b44ac3543cbee16a3b59f7eeba3e5c5decf839bd6525b61de72d01c3cdc93c",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "759",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+      "whole_ligand_scaffold_sha256": "463a74ee1118060ec9ad9e39d28bfbfc10e6c43806ac76f79147f560d948fbfe",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)COCCOCCOCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "D",
+          "poi_min_distance_A": 2.873,
+          "e3_min_distance_A": 2.565,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "H",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "H",
+          "poi_min_distance_A": 3.188,
+          "e3_min_distance_A": 2.396,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "D",
+        "poi_min_distance_A": 2.873,
+        "e3_min_distance_A": 2.565,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 15,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": true,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6BN7",
+      "source_url": "https://www.rcsb.org/structure/6BN7",
+      "title": "Crystal structure of DDB1-CRBN-BRD4(BD1) complex bound to dBET23 PROTAC.",
+      "resolution_A": 3.501,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2018-05-30",
+      "citation_doi": "10.1038/s41589-018-0055-y",
+      "coordinate_sha256": "7936576b80ac1760a3255ad53f22592a48002a9c5c1e158c7315c40d6497083a",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "RN3",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "CRBN",
+      "e3_uniprot": "Q96SW2",
+      "split": "development",
+      "ccd_sha256": "a980f02ba244a80b212b74b0c1660c9dcbf5637d487a2c83c99fc75105f8b707",
+      "whole_ligand_scaffold_sha256": "d5302e3cef5ea95d718a1f863420f4ac07b248bb164eb30b723be89814c14e34",
+      "ligand_smiles": "COC(=O)C[C@@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C(=O)NCCCCCCCCNC(=O)COc3cccc4c3C(=O)N([C@H]3CCC(=O)NC3=O)C4=O)c2C)-n2c(C)nnc21",
+      "expected_heavy_atoms": 62,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "502",
+          "poi_chain": "C",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.803,
+          "e3_min_distance_A": 1.974,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "502",
+        "poi_chain": "C",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.803,
+        "e3_min_distance_A": 1.974,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 36,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6BN8",
+      "source_url": "https://www.rcsb.org/structure/6BN8",
+      "title": "Crystal structure of DDB1-CRBN-BRD4(BD1) complex bound to dBET55 PROTAC.",
+      "resolution_A": 3.99003499985,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2018-06-06",
+      "citation_doi": "10.1038/s41589-018-0055-y",
+      "coordinate_sha256": "3c8a43b5c428da03528a6d719c48c5b7066d61e9973bb21fd9b124fa724cc6d9",
+      "reasons": [
+        "No unique complete heterobifunctional chemical component and two protein roles."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "status": "excluded",
+      "classification": "PROTAC_complex_with_unresolved_full_ligand",
+      "observed_components": [
+        "ALA",
+        "ARG",
+        "ASN",
+        "ASP",
+        "CYS",
+        "GLN",
+        "GLU",
+        "GLY",
+        "HIS",
+        "ILE",
+        "LEU",
+        "LYS",
+        "MET",
+        "PHE",
+        "PRO",
+        "SER",
+        "THR",
+        "TRP",
+        "TYR",
+        "VAL",
+        "ZN"
+      ],
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "CRBN",
+      "e3_uniprot": "Q96SW2",
+      "split": "development"
+    },
+    {
+      "pdb_id": "6BN9",
+      "source_url": "https://www.rcsb.org/structure/6BN9",
+      "title": "Crystal structure of DDB1-CRBN-BRD4(BD1) complex bound to dBET70 PROTAC",
+      "resolution_A": 4.382,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2018-05-30",
+      "citation_doi": "10.1038/s41589-018-0055-y",
+      "coordinate_sha256": "dbf5e989b74bdb239d61ed5de79ceb7fd8b85ed2258442c468ca3c733420a9ab",
+      "reasons": [
+        "Resolution exceeds the inventory 4.0 A limit.",
+        "No unique complete heterobifunctional chemical component and two protein roles."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "status": "excluded",
+      "classification": "PROTAC_complex_with_unresolved_full_ligand",
+      "observed_components": [
+        "ALA",
+        "ARG",
+        "ASN",
+        "ASP",
+        "CYS",
+        "GLN",
+        "GLU",
+        "GLY",
+        "HIS",
+        "ILE",
+        "LEU",
+        "LYS",
+        "MET",
+        "PHE",
+        "PRO",
+        "SER",
+        "THR",
+        "TRP",
+        "TYR",
+        "VAL",
+        "ZN"
+      ],
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "CRBN",
+      "e3_uniprot": "Q96SW2",
+      "split": "development"
+    },
+    {
+      "pdb_id": "6BNB",
+      "source_url": "https://www.rcsb.org/structure/6BNB",
+      "title": "Crystal structure of DDB1-CRBN-BRD4(BD1) complex bound to dBET57 PROTAC",
+      "resolution_A": 6.343,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2018-05-30",
+      "citation_doi": "10.1038/s41589-018-0055-y",
+      "coordinate_sha256": "26518bdf1bacaca876b696daaca1dde96698717e557b8ea630890a25ea942aab",
+      "reasons": [
+        "Resolution exceeds the inventory 4.0 A limit.",
+        "No unique complete heterobifunctional chemical component and two protein roles."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "status": "excluded",
+      "classification": "PROTAC_complex_with_unresolved_full_ligand",
+      "observed_components": [
+        "ALA",
+        "ARG",
+        "ASN",
+        "ASP",
+        "CYS",
+        "GLN",
+        "GLU",
+        "GLY",
+        "HIS",
+        "ILE",
+        "LEU",
+        "LYS",
+        "MET",
+        "MSE",
+        "PHE",
+        "PRO",
+        "SER",
+        "THR",
+        "TRP",
+        "TYR",
+        "VAL",
+        "ZN"
+      ],
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "CRBN",
+      "e3_uniprot": "Q96SW2",
+      "split": "development"
+    },
+    {
+      "pdb_id": "6BOY",
+      "source_url": "https://www.rcsb.org/structure/6BOY",
+      "title": "Crystal structure of DDB1-CRBN-BRD4(BD1) complex bound to dBET6 PROTAC.",
+      "resolution_A": 3.33,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2018-05-30",
+      "citation_doi": "10.1038/s41589-018-0055-y",
+      "coordinate_sha256": "499c6f66b6fc531299fd4172a99a24d219f469e2f4c3abf07fb6ada4a6d74c3a",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "RN6",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "CRBN",
+      "e3_uniprot": "Q96SW2",
+      "split": "development",
+      "ccd_sha256": "d54c5e978045ccf6a3ffbd2bcff24964b42a5e1217c016f11b462bb4c854baf3",
+      "whole_ligand_scaffold_sha256": "1d6ee4b809d2dde3db0f3f1354bfa2bccf14714447a51c0aad656881a58d928e",
+      "ligand_smiles": "Cc1sc2c(c1C)C(c1ccc(Cl)cc1)=N[C@@H](CC(=O)NCCCCCCCCNC(=O)COc1cccc3c1C(=O)N([C@H]1CCC(=O)NC1=O)C3=O)c1nnc(C)n1-2",
+      "expected_heavy_atoms": 59,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "502",
+          "poi_chain": "C",
+          "e3_chain": "B",
+          "poi_min_distance_A": 3.198,
+          "e3_min_distance_A": 2.686,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "502",
+        "poi_chain": "C",
+        "e3_chain": "B",
+        "poi_min_distance_A": 3.198,
+        "e3_min_distance_A": 2.686,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 41,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": true,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6HAX",
+      "source_url": "https://www.rcsb.org/structure/6HAX",
+      "title": "Crystal structure of PROTAC 2 in complex with the bromodomain of human SMARCA2 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.35,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2019-06-12",
+      "citation_doi": "10.1038/s41589-019-0294-6",
+      "coordinate_sha256": "5f93a0fc2634ba2865a408a72c7238629c7b5572c91e7b49b48e1e839d08339b",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "FWZ",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "5254787390b624626d5dbed990fa7c04d0947c44a784352232db2be6d3654b3d",
+      "whole_ligand_scaffold_sha256": "6c90c4bfe604b7eb6db8f6640a1bf035b3971641c670e5a7ef3af3e00cebcec6",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)c(OCCc2ccc(CN3CCN(c4cc(-c5ccccc5O)nnc4N)CC3)cc2)c1",
+      "expected_heavy_atoms": 66,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.886,
+          "e3_min_distance_A": 2.713,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.894,
+          "e3_min_distance_A": 2.66,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.886,
+        "e3_min_distance_A": 2.713,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 21,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6HAY",
+      "source_url": "https://www.rcsb.org/structure/6HAY",
+      "title": "Crystal structure of PROTAC 1 in complex with the bromodomain of human SMARCA2 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.24,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2019-06-12",
+      "citation_doi": "10.1038/s41589-019-0294-6",
+      "coordinate_sha256": "44cf1a48dd1a98d1cbf7beedee2162988af4d0d31a99d22ff2f230d7f9ebf2b8",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "FX8",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "ea01adf910d83e37c44df2710694b090c15ff86eba2cd71370a1029ab6ff5f4d",
+      "whole_ligand_scaffold_sha256": "af19bb4c4fcdc126674fd4c0fd10b33bc8df621bf27c3de42c74d78369604dc0",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)c(OCCOCCOCCN2CCN(c3cc(-c4ccccc4O)nnc3N)CC2)c1",
+      "expected_heavy_atoms": 65,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.737,
+          "e3_min_distance_A": 2.668,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.784,
+          "e3_min_distance_A": 2.682,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.737,
+        "e3_min_distance_A": 2.668,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 18,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6HR2",
+      "source_url": "https://www.rcsb.org/structure/6HR2",
+      "title": "Crystal structure of PROTAC 2 in complex with the bromodomain of human SMARCA4 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 1.76,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2019-06-12",
+      "citation_doi": "10.1038/s41589-019-0294-6",
+      "coordinate_sha256": "43c6aeefd9fa57413ff5e11c2923209995cfcf6e878840441a589327cb9ed4ae",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "FWZ",
+      "target_uniprot": "P51532",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "5254787390b624626d5dbed990fa7c04d0947c44a784352232db2be6d3654b3d",
+      "whole_ligand_scaffold_sha256": "6c90c4bfe604b7eb6db8f6640a1bf035b3971641c670e5a7ef3af3e00cebcec6",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)c(OCCc2ccc(CN3CCN(c4cc(-c5ccccc5O)nnc4N)CC3)cc2)c1",
+      "expected_heavy_atoms": 66,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.68,
+          "e3_min_distance_A": 2.674,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.684,
+          "e3_min_distance_A": 2.665,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.68,
+        "e3_min_distance_A": 2.674,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 18,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6SIS",
+      "source_url": "https://www.rcsb.org/structure/6SIS",
+      "title": "Crystal structure of macrocyclic PROTAC 1 in complex with the second bromodomain of human Brd4 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 3.5,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2019-12-04",
+      "citation_doi": "10.1002/anie.201914396",
+      "coordinate_sha256": "552b3f924f250f5e3d6b0b0f44ddbb495c5019a5b05d7b21999e31b3f1907708",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "LFE",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "beb149bf0b5b44e8edad480514a04b398c0d9bdb342e856cd3b7b646b12f5494",
+      "whole_ligand_scaffold_sha256": "8ec4e5a2d149fb306d9e29da8de903f9af9ba02136cada44418f3b3e17bdb85d",
+      "ligand_smiles": "Cc1ncsc1-c1ccc2c(c1)OCCOCCOC[C@@H](NC(=O)C[C@@H]1N[C@@H](c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc31)COCCOCCOCC(=O)N[C@@H](C(C)(C)C)C(=O)N1C[C@H](O)C[C@H]1C(=O)NC2",
+      "expected_heavy_atoms": 77,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "D",
+          "poi_min_distance_A": 2.871,
+          "e3_min_distance_A": 2.615,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "H",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "H",
+          "poi_min_distance_A": 2.876,
+          "e3_min_distance_A": 2.645,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "D",
+        "poi_min_distance_A": 2.871,
+        "e3_min_distance_A": 2.615,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 15,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6W7O",
+      "source_url": "https://www.rcsb.org/structure/6W7O",
+      "title": "Ternary complex structure - BTK cIAP compound 17",
+      "resolution_A": 2.17,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2020-11-18",
+      "citation_doi": null,
+      "coordinate_sha256": "e545b1bbf0aae83b296a66a765d043bf4429955e4964dda1968d58866cf42d8c",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "TL7",
+      "target_uniprot": "Q06187",
+      "target_family": "protein_kinases",
+      "e3": "cIAP1",
+      "e3_uniprot": "Q13490",
+      "split": "validation",
+      "ccd_sha256": "ac89e12092db355d5f979184c2b494c98b3836f6bb16b27e4e89c062d4e2be4f",
+      "whole_ligand_scaffold_sha256": "6c8f18382df3668e29a8d1b2092126a8ec7ad15fe10bfb8453c27406d68f263a",
+      "ligand_smiles": "CN[C@@H](C)C(=O)N[C@H](C(=O)N1Cc2cc(OCc3cnc(COC(=O)N4CCC[C@@H](n5nc(-c6ccc(Oc7ccc(F)cc7F)cc6)c(C(N)=O)c5N)C4)cn3)ccc2C[C@H]1C(=O)N[C@@H]1CCCc2ccccc21)C(C)(C)C",
+      "expected_heavy_atoms": 79,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "701",
+          "poi_chain": "A",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.793,
+          "e3_min_distance_A": 2.799,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "701",
+          "poi_chain": "B",
+          "e3_chain": "D",
+          "poi_min_distance_A": 2.789,
+          "e3_min_distance_A": 2.793,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "701",
+        "poi_chain": "A",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.793,
+        "e3_min_distance_A": 2.799,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 30,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6W8I",
+      "source_url": "https://www.rcsb.org/structure/6W8I",
+      "title": "Ternary complex structure - BTK cIAP compound 15",
+      "resolution_A": 3.8,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2020-11-18",
+      "citation_doi": null,
+      "coordinate_sha256": "ce3750e27e1c691938405a70867ce190adc7669a54e5f8fa9b31586fc27a255d",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "TKY",
+      "target_uniprot": "Q06187",
+      "target_family": "protein_kinases",
+      "e3": "cIAP1",
+      "e3_uniprot": "Q13490",
+      "split": "validation",
+      "ccd_sha256": "42c2e5549657df86acf424d33f3bf96deb1145a4a0f291e9b8aa490f9157ec06",
+      "whole_ligand_scaffold_sha256": "4ac365c2ef86b8a4278628766fd721f33a2f6e4ae429bdf48a16613057475151",
+      "ligand_smiles": "CN[C@@H](C)C(=O)N[C@H](C(=O)N1Cc2cc(OCCOCCOCCOCCOCCOC(=O)N3CCC[C@@H](n4nc(-c5ccc(Oc6ccc(F)cc6F)cc5)c(C(N)=O)c4N)C3)ccc2C[C@H]1C(=O)N[C@@H]1CCCc2ccccc21)C(C)(C)C",
+      "expected_heavy_atoms": 85,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "701",
+          "poi_chain": "C",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.808,
+          "e3_min_distance_A": 2.833,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "502",
+          "poi_chain": "A",
+          "e3_chain": "D",
+          "poi_min_distance_A": 3.051,
+          "e3_min_distance_A": 2.829,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "E",
+          "ligand_residue": "502",
+          "poi_chain": "B",
+          "e3_chain": "E",
+          "poi_min_distance_A": 2.854,
+          "e3_min_distance_A": 2.78,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "701",
+        "poi_chain": "C",
+        "e3_chain": "F",
+        "poi_min_distance_A": 2.808,
+        "e3_min_distance_A": 2.833,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 21,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "3"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "6ZHC",
+      "source_url": "https://www.rcsb.org/structure/6ZHC",
+      "title": "PROTAC6 mediated complex of VHL:EloB:EloC and Bcl-xL",
+      "resolution_A": 1.92,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2020-08-05",
+      "citation_doi": "10.1021/acschembio.0c00266",
+      "coordinate_sha256": "52c62eb5a5b0e83c5b6c53f562184eb68b3fa20498cf47615bd944c8ce0f60fa",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "QL8",
+      "target_uniprot": "Q07817",
+      "target_family": "BCL2",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "edfd540cfa81e63a895aca210d6400786956e013cbb22e44dfaf89eff437fc11",
+      "whole_ligand_scaffold_sha256": "56f3b1853c9b391e84649ac3f0ce978cc328c8757569e6d8458d4a870b33640b",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCOCCOCCOCCOCCOCCOCC#Cc2ccc(OCCCc3sc(N4CCc5cccc(C(=O)Nc6nc7ccccc7s6)c5C4)nc3C(=O)O)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 93,
+      "observed_copies": [
+        {
+          "ligand_chain": "AAA",
+          "ligand_residue": "301",
+          "poi_chain": "DDD",
+          "e3_chain": "AAA",
+          "poi_min_distance_A": 2.784,
+          "e3_min_distance_A": 2.577,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "AAA",
+        "ligand_residue": "301",
+        "poi_chain": "DDD",
+        "e3_chain": "AAA",
+        "poi_min_distance_A": 2.784,
+        "e3_min_distance_A": 2.577,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 17,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7JTO",
+      "source_url": "https://www.rcsb.org/structure/7JTO",
+      "title": "Crystal structure of Protac MS33 in complex with the WD repeat-containing protein 5 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 1.7,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2021-10-06",
+      "citation_doi": "10.1126/scitranslmed.abj1578",
+      "coordinate_sha256": "0fe4f6456aa887082eac1022322e6bf6bbbd62ba2089ec89c24f0368c937a1c2",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "VKA",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "abae0d44111945c927880b88fe2a67f254d9d4ba81a2fa73cd30c0e351e6b5aa",
+      "whole_ligand_scaffold_sha256": "f0de75a32ce9c58dc6e2e510c8de2df786b1651df23eaa8d9ea3133d98224493",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCCCCCCCCC(=O)NCCN2CCN(Cc3cccc(-c4ccc(N5CCN(C)CC5)c(NC(=O)C5=C(C(F)(F)F)CC(=O)N=C5)c4)c3)CC2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 86,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "406",
+          "poi_chain": "B",
+          "e3_chain": "L",
+          "poi_min_distance_A": 2.907,
+          "e3_min_distance_A": 2.484,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "406",
+        "poi_chain": "B",
+        "e3_chain": "L",
+        "poi_min_distance_A": 2.907,
+        "e3_min_distance_A": 2.484,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 8,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7JTP",
+      "source_url": "https://www.rcsb.org/structure/7JTP",
+      "title": "Crystal structure of Protac MS67 in complex with the WD repeat-containing protein 5 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.12,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2021-10-06",
+      "citation_doi": "10.1126/scitranslmed.abj1578",
+      "coordinate_sha256": "40a4dcf978e9fec11d0880a8c78bd03ef62fd5be7d2b6e46d2c2f15a43b1f92e",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "X6M",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "a844341c31f746d2cf42e5255ee3675a97188c9954427b640814f99a033e21a6",
+      "whole_ligand_scaffold_sha256": "db92e08bb6f43ebd85ba8990b5dbc09e0b81f1e056049c72c8ec95e7406c1f4b",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](C)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CNC(=O)c2ccc(F)c(-c3ccc(N4C[C@@H](C)N(C)[C@@H](C)C4)c(NC(=O)c4c[nH]c(=O)cc4C(F)(F)F)c3)c2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 73,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "402",
+          "poi_chain": "A",
+          "e3_chain": "L",
+          "poi_min_distance_A": 2.806,
+          "e3_min_distance_A": 2.604,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "402",
+        "poi_chain": "A",
+        "e3_chain": "L",
+        "poi_min_distance_A": 2.806,
+        "e3_min_distance_A": 2.604,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 25,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7KHH",
+      "source_url": "https://www.rcsb.org/structure/7KHH",
+      "title": "Ternary complex of VHL/BRD4-BD1/Compound9 (4-(3,5-difluoropyridin-2-yl)-N-(11-(((S)-1-((2S,4R)-4-hydroxy-2-((4-(4-methylthiazol-5-yl)benzyl)carbamoyl)pyrrolidin-1-yl)-3,3-dimethyl-1-oxobutan-2-yl)amino)-11-oxoundecyl)-10-methyl-7-((methylsulfonyl)methyl)-11-oxo-3,4,10,11-tetrahydro-1H-1,4,10-triazadibenzo[cd,f]azulene-6-carboxamide)",
+      "resolution_A": 2.281,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2021-02-24",
+      "citation_doi": "10.1021/acs.jmedchem.0c01846",
+      "coordinate_sha256": "40977ce5ad07a268b7d14d8a75b2f1b21f9506fc0a797f50ea94857682683d93",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "WEP",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "b0d761be57cdf5965bd46f41189a1efd1cdd5102c3121fd22c6c016719e2cea3",
+      "whole_ligand_scaffold_sha256": "3f7c9e6c9a9e33b2f679f94cbedbaa0a9a6c53d55c37238044fe007c9bc515e0",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCCCCCCCCCNC(=O)c2cc3c(cc2CS(C)(=O)=O)-c2cn(C)c(=O)c4[nH]cc(c24)CN3c2ncc(F)cc2F)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 77,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "301",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.83,
+          "e3_min_distance_A": 2.554,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "301",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.83,
+        "e3_min_distance_A": 2.554,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 23,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7PI4",
+      "source_url": "https://www.rcsb.org/structure/7PI4",
+      "title": "FAK Protac GSK215 in complex with FAK and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.24,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2021-09-29",
+      "citation_doi": "10.1002/anie.202109237",
+      "coordinate_sha256": "80d3e2326551aad0b8a67f5da28cd6118b86ceac5c8490f5a3b5b15720c03a4a",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "7QB",
+      "target_uniprot": "Q05397",
+      "target_family": "protein_kinases",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "e38332d44da908f474f3c2dffa69e02c1b483dfc4a36c40fabeff1442804c988",
+      "whole_ligand_scaffold_sha256": "3dfff1f57620375cd37da765194b492f2625445f048009642501dc14266429dd",
+      "ligand_smiles": "CNC(=O)c1ccccc1Nc1cc(Nc2ccc(N3CCN(CC(=O)N[C@H](C(=O)N4C[C@H](O)C[C@H]4C(=O)N[C@@H](C)c4ccc(-c5scnc5C)cc4)C(C)(C)C)CC3)cc2OC)ncc1C(F)(F)F",
+      "expected_heavy_atoms": 70,
+      "observed_copies": [
+        {
+          "ligand_chain": "AAA",
+          "ligand_residue": "301",
+          "poi_chain": "DDD",
+          "e3_chain": "AAA",
+          "poi_min_distance_A": 2.973,
+          "e3_min_distance_A": 2.503,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "AAA",
+        "ligand_residue": "301",
+        "poi_chain": "DDD",
+        "e3_chain": "AAA",
+        "poi_min_distance_A": 2.973,
+        "e3_min_distance_A": 2.503,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 16,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7Q2J",
+      "source_url": "https://www.rcsb.org/structure/7Q2J",
+      "title": "Quaternary Complex of human WDR5 and pVHL:ElonginC:ElonginB bound to PROTAC Homer",
+      "resolution_A": 2.5,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2021-11-24",
+      "citation_doi": "10.1016/j.chembiol.2023.06.002",
+      "coordinate_sha256": "2fe3fecff590b7fec93b9a3c8117f98ec8204e04a30499fcf1508cb26fac2508",
+      "reasons": [],
+      "deepternary_published_test_overlap": true,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "8KH",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "0dec932cd1f4a7fa80bf8fd4a54ae361f9e6a1af351759bae1eed382b52ecf5a",
+      "whole_ligand_scaffold_sha256": "9b63f0764ece786a583b42b72a3db9de5ee563d95aa17b164390b40ef73f9ed6",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCCCNC(=O)c2ccc(-c3ccc(N4CCN(C)CC4)c(NC(=O)c4c[nH]c(=O)cc4C(F)(F)F)c3)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 72,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "401",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.542,
+          "e3_min_distance_A": 2.543,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "401",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.542,
+        "e3_min_distance_A": 2.543,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 10,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7S4E",
+      "source_url": "https://www.rcsb.org/structure/7S4E",
+      "title": "Crystal Structure of ligand ACBi1 in complex with bromodomain of human Smarca2 and pVHL:ElonginC:ElonginB complex",
+      "resolution_A": 2.25,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-10-05",
+      "citation_doi": "10.1038/s41467-022-33575-4",
+      "coordinate_sha256": "13d5dcae05331c30e26d88e64bae94ef3016e35fe78179bcac32ae806f96f752",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "87A",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "cbce497ab64932445a1b6c016b2ab1fcb74a6a2837b9fa75b504a53257c68a3d",
+      "whole_ligand_scaffold_sha256": "d72efb1b9c0ca4551a50331e7f08469b233938e65032ee4afa87ec9a26f2154f",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)c(OCCOc2ccc(CN3CCN(c4cc(-c5ccccc5O)nnc4N)CC3)cc2)c1",
+      "expected_heavy_atoms": 67,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "308",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.628,
+          "e3_min_distance_A": 2.459,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "304",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.605,
+          "e3_min_distance_A": 2.498,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "308",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.628,
+        "e3_min_distance_A": 2.459,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 20,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7Z6L",
+      "source_url": "https://www.rcsb.org/structure/7Z6L",
+      "title": "Crystal structure of PROTAC 5 in complex with the bromodomain of human SMARCA2 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.24,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-09-07",
+      "citation_doi": "10.1038/s41467-022-33430-6",
+      "coordinate_sha256": "144776c9c89a73d8b577f733a71ef1df3826864bf4cf5ff01b5d713872db1b3c",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "IEI",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "386f068bdb8a37bfbe97ab9b940b2b678d2e8a7859852c7480545981a10a0213",
+      "whole_ligand_scaffold_sha256": "c8091daf49b88d35eebd9118607bac9babff0475884b418da1251c2b01564d88",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)c(OCCCN2CCC(c3ccc4c(c3)n(C3CCCC3)c3nc(=O)c5c(Br)cccc5n43)CC2)c1",
+      "expected_heavy_atoms": 70,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "201",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.861,
+          "e3_min_distance_A": 2.681,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "201",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.861,
+        "e3_min_distance_A": 2.681,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 4,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7Z76",
+      "source_url": "https://www.rcsb.org/structure/7Z76",
+      "title": "Crystal structure of compound 10 in complex with the bromodomain of human SMARCA2 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 1.32,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-09-14",
+      "citation_doi": "10.1038/s41467-022-33430-6",
+      "coordinate_sha256": "6cb4e42eae59db1395e0e8a5e379c41c28c314b21f5e1789ed60e2651466bed0",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "IFJ",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "933419b3dc473ced4fd4797b5c167e144f3b67df248bd39a3bfe248eff008a1e",
+      "whole_ligand_scaffold_sha256": "0398002d5973677bba780718abfd229dbf5e9fc38949da2a25858c3afc87328e",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](CO[C@H](C)CN2CCC(c3ccc4c(c3)n(C3CCCC3)c3nc(=O)c5c(Br)cccc5n43)CC2)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(N(C)C)CC2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 73,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "1501",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.73,
+          "e3_min_distance_A": 2.667,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "1501",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.73,
+        "e3_min_distance_A": 2.667,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 21,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7Z77",
+      "source_url": "https://www.rcsb.org/structure/7Z77",
+      "title": "Crystal structure of compound 6 in complex with the bromodomain of human SMARCA2 and pVHL:ElonginC:ElonginB",
+      "resolution_A": 1.97,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-09-14",
+      "citation_doi": "10.1038/s41467-022-33430-6",
+      "coordinate_sha256": "24befc737723faec434ab051e10d2ff3411b22ff627189aac6d2c0e6141f35e8",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "IFF",
+      "target_uniprot": "P51531",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "74ba6a92dc64862e08baa1a2835373f76ff10c44d6473fc49b1ae56fadc3240f",
+      "whole_ligand_scaffold_sha256": "1b181dc8d28de1a436f5066eb3e300a38df4bde0aa003c06297c0bf5419c9d63",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](CCCN2CCC(c3ccc4c(c3)n(C3CCCC3)c3nc(=O)c5c(Br)cccc5n43)CC2)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "1501",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.987,
+          "e3_min_distance_A": 2.658,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "1501",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.987,
+        "e3_min_distance_A": 2.658,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 8,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "7ZNT",
+      "source_url": "https://www.rcsb.org/structure/7ZNT",
+      "title": "CRYSTAL STRUCTURE OF AT7 IN COMPLEX WITH THE SECOND BROMODOMAIN OF HUMAN BRD4 AND PVHL:ELONGINC:ELONGINB",
+      "resolution_A": 3.0,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-09-14",
+      "citation_doi": "10.1038/s41589-022-01177-2",
+      "coordinate_sha256": "69cffb2246e851c15457864a7f5cc6a798668111f6c38550d0f963be6939c881",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "IZR",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "62dcb6c06bdc65cd129850e9acd3eb14508559376cdf9c1145cf11249fe70322",
+      "whole_ligand_scaffold_sha256": "57b92939256abef55c71de45931d08313cf3b42c5d6cd9a3bf5319636d3c6362",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)C2(F)CC2)C(C)(C)SCCCCCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "301",
+          "poi_chain": "H",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.88,
+          "e3_min_distance_A": 2.472,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "301",
+          "poi_chain": "G",
+          "e3_chain": "F",
+          "poi_min_distance_A": 3.028,
+          "e3_min_distance_A": 2.67,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "301",
+        "poi_chain": "H",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.88,
+        "e3_min_distance_A": 2.472,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 16,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BB2",
+      "source_url": "https://www.rcsb.org/structure/8BB2",
+      "title": "Structure of human WDR5 and pVHL:ElonginC:ElonginB bound to PROTAC with PEG linker (conformation #2)",
+      "resolution_A": 2.05,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-11-09",
+      "citation_doi": null,
+      "coordinate_sha256": "394bf47fceb0ff53adeb2b39ebf078339b45c6a49e617172f85a06553f9f5d99",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "Q3X",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "44cb6c37a6b11ff342781a195c7fc788b9cb7e343fabc318327879ad1fb85191",
+      "whole_ligand_scaffold_sha256": "1542bb7cd2e24deb982a7954d30d321b1e8f2c6486fd92a26eb4f53cc1fed860",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCOCCOCCOCCOCCNC(=O)c2ccc(-c3ccc(N4CCN(C)CC4)c(NC(=O)c4cnc(O)cc4C(F)(F)F)c3)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 82,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "403",
+          "poi_chain": "B",
+          "e3_chain": "L",
+          "poi_min_distance_A": 2.734,
+          "e3_min_distance_A": 2.513,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "403",
+        "poi_chain": "B",
+        "e3_chain": "L",
+        "poi_min_distance_A": 2.734,
+        "e3_min_distance_A": 2.513,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 2,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BB3",
+      "source_url": "https://www.rcsb.org/structure/8BB3",
+      "title": "Structure of human WDR5 and pVHL:ElonginC:ElonginB bound to PROTAC with PEG linker (conformation #1)",
+      "resolution_A": 1.8,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-11-09",
+      "citation_doi": null,
+      "coordinate_sha256": "1fbb44d855bc6db4ef3e7b73692a2315e93ba481847b2ecbd456e6b81382917f",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "Q3X",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "44cb6c37a6b11ff342781a195c7fc788b9cb7e343fabc318327879ad1fb85191",
+      "whole_ligand_scaffold_sha256": "1542bb7cd2e24deb982a7954d30d321b1e8f2c6486fd92a26eb4f53cc1fed860",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCOCCOCCOCCOCCNC(=O)c2ccc(-c3ccc(N4CCN(C)CC4)c(NC(=O)c4cnc(O)cc4C(F)(F)F)c3)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 82,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "407",
+          "poi_chain": "B",
+          "e3_chain": "L",
+          "poi_min_distance_A": 2.804,
+          "e3_min_distance_A": 2.612,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "407",
+        "poi_chain": "B",
+        "e3_chain": "L",
+        "poi_min_distance_A": 2.804,
+        "e3_min_distance_A": 2.612,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 1,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BB4",
+      "source_url": "https://www.rcsb.org/structure/8BB4",
+      "title": "Structure of human WDR5 and pVHL:ElonginC:ElonginB bound to PROTAC with C3 linker",
+      "resolution_A": 2.8,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-11-09",
+      "citation_doi": "10.1016/j.chembiol.2023.06.002",
+      "coordinate_sha256": "d6f20ca698b89d49351ead7d1505f423cb4db2ae17ef3a5cb5ab2d21790d074c",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "Q3R",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "b7aba813dc27c846d0623f38782500d9ff94bb9d0c31045336c6107c42fee2d6",
+      "whole_ligand_scaffold_sha256": "a54f1b5d842d71a2f5a9d3ab978e6d7f14355f7cf2a34b31ab5d25d4ad1d355e",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCCNC(=O)c2ccc(-c3ccc(N4CCN(C)CC4)c(NC(=O)c4cnc(O)cc4C(F)(F)F)c3)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 71,
+      "observed_copies": [
+        {
+          "ligand_chain": "P",
+          "ligand_residue": "301",
+          "poi_chain": "Q",
+          "e3_chain": "P",
+          "poi_min_distance_A": 2.86,
+          "e3_min_distance_A": 2.555,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "P",
+        "ligand_residue": "301",
+        "poi_chain": "Q",
+        "e3_chain": "P",
+        "poi_min_distance_A": 2.86,
+        "e3_min_distance_A": 2.555,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 5,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BB5",
+      "source_url": "https://www.rcsb.org/structure/8BB5",
+      "title": "Structure of human WDR5 and pVHL:ElonginC:ElonginB bound to PROTAC with Aryl linker",
+      "resolution_A": 2.2,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2022-11-09",
+      "citation_doi": "10.1016/j.chembiol.2023.06.002",
+      "coordinate_sha256": "4a17182c00761fc4eeb66041822f3946abd9ccd721f3cae0a48d377a260b5cca",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "Q43",
+      "target_uniprot": "P61964",
+      "target_family": "WDR5",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "validation",
+      "ccd_sha256": "1d5f977da860886ac5a95f4be1da389b365589e9677b9e070251bd9899803e4a",
+      "whole_ligand_scaffold_sha256": "4ddc0d77e3b4e6748c953b397eef5497be64dd0ae9f3d0d02498233e0a800bd2",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)Cc2ccc(CNC(=O)c3ccc(-c4ccc(N5CCN(C)CC5)c(NC(=O)c5cnc(O)cc5C(F)(F)F)c4)cc3)cc2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 76,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "302",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.667,
+          "e3_min_distance_A": 2.582,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "302",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.667,
+        "e3_min_distance_A": 2.582,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 3,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BDS",
+      "source_url": "https://www.rcsb.org/structure/8BDS",
+      "title": "Ternary complex between VCB, BRD4-BD1 and PROTAC 48",
+      "resolution_A": 1.72,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-02-15",
+      "citation_doi": "10.1002/cmdc.202200615",
+      "coordinate_sha256": "38cae08be5144282131238598971865deed59e860b2b91f826da587a1112b564",
+      "reasons": [
+        "Explicit valence for atom # 22 N, 5, is greater than permitted"
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "QIY",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "status": "excluded",
+      "exclusion_stage": "current_chemical_preparation",
+      "revisit_in": "P1: validate CCD preparation without changing chemical identity; retain the frozen family split in any amended inventory.",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BDT",
+      "source_url": "https://www.rcsb.org/structure/8BDT",
+      "title": "Ternary complex between VCB, BRD4-BD2 and PROTAC 51",
+      "resolution_A": 2.7,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-02-15",
+      "citation_doi": "10.1002/cmdc.202200615",
+      "coordinate_sha256": "661c3781a62a81117daaec076030296ac535d1a356e9c79a0c8ad7a6cfde3832",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "QLX",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "0392a108ab8283ea470b74956ecfc605ee5c2867cdfdc59afacb64de2535028f",
+      "whole_ligand_scaffold_sha256": "609cd7b9251cb7d053db74080b9468ee6ccc3f4a36224136a38a8e4ca5097af8",
+      "ligand_smiles": "Cc1cc([C@H](C(=O)N2C[C@H](O)C[C@H]2C(=O)N[C@@H](CC(=O)NCCOCCOCCOCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)c2ccc(-c3scnc3C)cc2)C(C)C)on1",
+      "expected_heavy_atoms": 76,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "301",
+          "poi_chain": "A",
+          "e3_chain": "D",
+          "poi_min_distance_A": 2.857,
+          "e3_min_distance_A": 2.486,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "H",
+          "ligand_residue": "301",
+          "poi_chain": "E",
+          "e3_chain": "H",
+          "poi_min_distance_A": 2.84,
+          "e3_min_distance_A": 2.609,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "301",
+        "poi_chain": "A",
+        "e3_chain": "D",
+        "poi_min_distance_A": 2.857,
+        "e3_min_distance_A": 2.486,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 19,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BDX",
+      "source_url": "https://www.rcsb.org/structure/8BDX",
+      "title": "Ternary complex between VCB, BRD4-BD2 and PROTAC 48",
+      "resolution_A": 2.93,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-02-15",
+      "citation_doi": "10.1002/cmdc.202200615",
+      "coordinate_sha256": "17961ec5783d550949fde59bb2f550232c66051d0531b91d9a6ebaca87f03acf",
+      "reasons": [
+        "Explicit valence for atom # 22 N, 5, is greater than permitted"
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "QIY",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "status": "excluded",
+      "exclusion_stage": "current_chemical_preparation",
+      "revisit_in": "P1: validate CCD preparation without changing chemical identity; retain the frozen family split in any amended inventory.",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8BEB",
+      "source_url": "https://www.rcsb.org/structure/8BEB",
+      "title": "Ternary complex between VCB, BRD4-BD1 and PROTAC 49",
+      "resolution_A": 3.18,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-02-15",
+      "citation_doi": "10.1002/cmdc.202200615",
+      "coordinate_sha256": "957c45797017fe456cfe3a028c3fce6371ce3c7fc60ade66e8ab940f0db292ca",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "QIK",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "eb39c8f582ffc2610285585ab4d47c43dac8b699fc899a4740b74d698bd959d5",
+      "whole_ligand_scaffold_sha256": "b7364522657e65722e3ec6cb268e48d623042826adae8fb5ca88040ebb2f6348",
+      "ligand_smiles": "Cc1cc([C@H](C(=O)N2C[C@H](O)C[C@H]2C(=O)N[C@@H](CC(=O)NCCCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)c2ccc(-c3scnc3C)cc2)C(C)C)on1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "301",
+          "poi_chain": "D",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.974,
+          "e3_min_distance_A": 2.642,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "301",
+        "poi_chain": "D",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.974,
+        "e3_min_distance_A": 2.642,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 17,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8DSO",
+      "source_url": "https://www.rcsb.org/structure/8DSO",
+      "title": "Structure of cIAP1, BTK and BCCov",
+      "resolution_A": 2.334,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-03-08",
+      "citation_doi": "10.1038/s41467-023-36738-z",
+      "coordinate_sha256": "a6d38e4eed5a1dd7b162cfa1ef8308fb04c5a9e1c20a474497c2a014f302bc29",
+      "reasons": [
+        "CCD stereochemistry disagrees with ideal geometry at C19."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "TOO",
+      "target_uniprot": "Q06187",
+      "target_family": "protein_kinases",
+      "e3": "cIAP1",
+      "e3_uniprot": "Q13490",
+      "split": "validation",
+      "status": "excluded",
+      "exclusion_stage": "current_chemical_preparation",
+      "revisit_in": "P1: validate CCD preparation without changing chemical identity; retain the frozen family split in any amended inventory.",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8FY0",
+      "source_url": "https://www.rcsb.org/structure/8FY0",
+      "title": "E3:PROTAC:target ternary complex structure (VCB/753b/BCL-xL)",
+      "resolution_A": 2.94,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2024-04-10",
+      "citation_doi": "10.1038/s41467-024-46922-4",
+      "coordinate_sha256": "0b73fdc4b2e859d9c3ca13b8463f52e98df958f733ced3197021dabc9e59b13c",
+      "reasons": [
+        "CCD ideal coordinates are missing; current stereo-preserving reader requires them. This is a preparation limitation, not evidence of an incomplete experimental ligand."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "YF8",
+      "target_uniprot": "Q07817",
+      "target_family": "BCL2",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "status": "excluded",
+      "exclusion_stage": "current_chemical_preparation",
+      "revisit_in": "P1: validate CCD preparation without changing chemical identity; retain the frozen family split in any amended inventory.",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8FY1",
+      "source_url": "https://www.rcsb.org/structure/8FY1",
+      "title": "E3:PROTAC:target ternary complex structure (VCB/753b/BCL-2)",
+      "resolution_A": 2.56,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2024-04-10",
+      "citation_doi": "10.1038/s41467-024-46922-4",
+      "coordinate_sha256": "2c9dad8b015dec6d91203053fce286379f87fd9a0419b45af44babe36f487ea1",
+      "reasons": [
+        "CCD ideal coordinates are missing; current stereo-preserving reader requires them. This is a preparation limitation, not evidence of an incomplete experimental ligand."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "YF8",
+      "target_uniprot": "P10415",
+      "target_family": "BCL2",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "status": "excluded",
+      "exclusion_stage": "current_chemical_preparation",
+      "revisit_in": "P1: validate CCD preparation without changing chemical identity; retain the frozen family split in any amended inventory.",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8FY2",
+      "source_url": "https://www.rcsb.org/structure/8FY2",
+      "title": "E3:PROTAC:target ternary complex structure (VCB/WH244/BCL-2)",
+      "resolution_A": 2.98,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2024-04-10",
+      "citation_doi": "10.1038/s41467-024-46922-4",
+      "coordinate_sha256": "b89c413b674935e938447862f1f3078b44f829f8523e3c5b10aa5f2996941632",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "YFH",
+      "target_uniprot": "P10415",
+      "target_family": "BCL2",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "14db52d583028175abb0a985d5206416bd407698a2888694cd788b67a007ad8c",
+      "whole_ligand_scaffold_sha256": "8fce9a262af6e67cc9d161a91d8c7c2872d2a74280e7c30f0c685122d9b828e9",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](C)NC(=O)[C@@H]2C[C@H](O)CN2C(=O)[C@@H](NC(=O)CN2CCN(CC(=O)N3CCN(C[C@]4(C)CCC(c5ccc(Cl)cc5)=C(CN5CCN(c6ccc(C(=O)NS(=O)(=O)c7ccc(N[C@H](CCN8C[C@H]9C[C@@H]8CO9)CSc8ccccc8)c(S(=O)(=O)C(F)(F)F)c7)cc6)CC5)C4)CC3)CC2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 115,
+      "observed_copies": [
+        {
+          "ligand_chain": "D",
+          "ligand_residue": "301",
+          "poi_chain": "D",
+          "e3_chain": "A",
+          "poi_min_distance_A": 2.951,
+          "e3_min_distance_A": 2.469,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "D",
+        "ligand_residue": "301",
+        "poi_chain": "D",
+        "e3_chain": "A",
+        "poi_min_distance_A": 2.951,
+        "e3_min_distance_A": 2.469,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 5,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8PC2",
+      "source_url": "https://www.rcsb.org/structure/8PC2",
+      "title": "SelDeg51 in complex with FKBP51FK1 domain and pVHL:EloB:EloC",
+      "resolution_A": 2.8,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-11-15",
+      "citation_doi": "10.1002/anie.202309706",
+      "coordinate_sha256": "1a009bac3715da4f044f5be1f9e640f96362c64cbeae205c55a85d68fb398fae",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "XZW",
+      "target_uniprot": "Q13451",
+      "target_family": "FKBP",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "ef4d08baf8b8893703ab39e402462d6d8437e332abcc3841985c38f5766242ca",
+      "whole_ligand_scaffold_sha256": "babec5bef9945a58b16fe8b18f6a7e03de6fc0481711eabcc9d3caed65fe8f9f",
+      "ligand_smiles": "COc1ccc(CC[C@@H](OC(=O)[C@@H]2CCCCN2C(=O)[C@H](c2cc(OC)c(OC)c(OC)c2)C2CCCCC2)c2ccc(OCc3cn(CCCOc4cc(-c5scnc5C)ccc4CNC(=O)[C@@H]4C[C@@H](O)CN4C(=O)[C@@H](NC(=O)C4(F)CC4)C(C)(C)C)nn3)cc2)cc1OC",
+      "expected_heavy_atoms": 96,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "301",
+          "poi_chain": "H",
+          "e3_chain": "A",
+          "poi_min_distance_A": 2.978,
+          "e3_min_distance_A": 2.593,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "301",
+          "poi_chain": "G",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.654,
+          "e3_min_distance_A": 2.589,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "301",
+        "poi_chain": "H",
+        "e3_chain": "A",
+        "poi_min_distance_A": 2.978,
+        "e3_min_distance_A": 2.593,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 9,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "2"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8QJR",
+      "source_url": "https://www.rcsb.org/structure/8QJR",
+      "title": "BRG1 bromodomain in complex with VBC via compound 17",
+      "resolution_A": 3.17,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2024-01-17",
+      "citation_doi": "10.1021/acs.jmedchem.3c01781",
+      "coordinate_sha256": "268e14f6e157888eb6a205d06f4494833ecbc2e1392e6600f24b57bf82f2bef8",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "VLH",
+      "target_uniprot": "P51532",
+      "target_family": "SWI_SNF",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "1020aef43a380e3968e31255ce3ad4c75ba8e6693c96f795331c75151c0f76a3",
+      "whole_ligand_scaffold_sha256": "2edc2ec58c1c9cf2cd209e5c214ed6734e1e03df4c81965de1ea8b821a6787b1",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](C)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](c2cc(OCCN3CCC(O[C@H]4C[C@H](Oc5cc(N6[C@@H]7CC[C@H]6CN(c6cc(-c8ccccc8O)nnc6N)C7)ccn5)C4)CC3)no2)C(C)C)cc1",
+      "expected_heavy_atoms": 77,
+      "observed_copies": [
+        {
+          "ligand_chain": "C",
+          "ligand_residue": "305",
+          "poi_chain": "G",
+          "e3_chain": "C",
+          "poi_min_distance_A": 2.81,
+          "e3_min_distance_A": 2.62,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "303",
+          "poi_chain": "H",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.637,
+          "e3_min_distance_A": 2.595,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "C",
+        "ligand_residue": "305",
+        "poi_chain": "G",
+        "e3_chain": "C",
+        "poi_min_distance_A": 2.81,
+        "e3_min_distance_A": 2.62,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 0,
+      "ppi_metric_applicable": false,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8QU8",
+      "source_url": "https://www.rcsb.org/structure/8QU8",
+      "title": "PROTAC-mediated complex of KRAS with VHL/Elongin-B/Elongin-C/Cullin-2/Rbx1",
+      "resolution_A": 3.5,
+      "methods": [
+        "ELECTRON MICROSCOPY"
+      ],
+      "release_date": "2023-12-06",
+      "citation_doi": "10.1126/science.adm8684",
+      "coordinate_sha256": "7b2f80c8f73fdede69c598e188ebd26c57fca2926d3dc59a0213cc8bf2f34b87",
+      "reasons": [
+        "Not an X-ray crystal structure; separate experimental stratum required."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "WYL",
+      "target_uniprot": "P01116",
+      "target_family": "RAS",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "52c8c9406949b95fb9efda034bd0ea53ff122af874d02249b3f5d19578cc0b2d",
+      "whole_ligand_scaffold_sha256": "3d297e85eb264993ef0bca0a279f5854cdce6b5e4f0b0a04e86df81c1d1cff33",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](CO)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@H](C(C)C)n2cc(OCCCCN3CCCN(c4nccc(-c5noc([C@@]6(C)CCCc7sc(N)c(C#N)c76)n5)n4)[C@@H](C)C3)nn2)cc1",
+      "expected_heavy_atoms": 72,
+      "observed_copies": [
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "202",
+          "poi_chain": "F",
+          "e3_chain": "A",
+          "poi_min_distance_A": 2.789,
+          "e3_min_distance_A": 2.989,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "F",
+        "ligand_residue": "202",
+        "poi_chain": "F",
+        "e3_chain": "A",
+        "poi_min_distance_A": 2.789,
+        "e3_min_distance_A": 2.989,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 1,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "excluded",
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8QVU",
+      "source_url": "https://www.rcsb.org/structure/8QVU",
+      "title": "Crystal Structure of ligand ACBI3 in complex with KRAS G12D C118S GDP and pVHL:ElonginC:ElonginB complex",
+      "resolution_A": 2.24,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-12-06",
+      "citation_doi": "10.1126/science.adm8684",
+      "coordinate_sha256": "33ade98d9b41cb5586352872221850a0d772cd5c1148d4eb02d8fb52291f1a20",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "WYL",
+      "target_uniprot": "P01116",
+      "target_family": "RAS",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "52c8c9406949b95fb9efda034bd0ea53ff122af874d02249b3f5d19578cc0b2d",
+      "whole_ligand_scaffold_sha256": "3d297e85eb264993ef0bca0a279f5854cdce6b5e4f0b0a04e86df81c1d1cff33",
+      "ligand_smiles": "Cc1ncsc1-c1ccc([C@H](CO)NC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@H](C(C)C)n2cc(OCCCCN3CCCN(c4nccc(-c5noc([C@@]6(C)CCCc7sc(N)c(C#N)c76)n5)n4)[C@@H](C)C3)nn2)cc1",
+      "expected_heavy_atoms": 72,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "302",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.689,
+          "e3_min_distance_A": 2.734,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "E",
+          "ligand_residue": "201",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.754,
+          "e3_min_distance_A": 2.666,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "302",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.689,
+        "e3_min_distance_A": 2.734,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 8,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "2"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8QW6",
+      "source_url": "https://www.rcsb.org/structure/8QW6",
+      "title": "Crystal Structure of compound 3 in complex with KRAS G12V C118S GDP and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.2,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-12-06",
+      "citation_doi": "10.1126/science.adm8684",
+      "coordinate_sha256": "42fddac595dddb7ac7f6d64eabdcb1c82170c3f3bf4dfb4985c44b32fddcbdf5",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "X4R",
+      "target_uniprot": "P01116",
+      "target_family": "RAS",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "eb22e6c0b76d739d18d9ffa97ac9a933fb1ce9e5c661eec7d4ec190b8ac1d103",
+      "whole_ligand_scaffold_sha256": "fcb8fb2dc25c7abb54cbf31e123135e6c0fe814bcf4412b9f18505bee16cfea9",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)CCCCCN2CCCN(c3nccc(-c4noc([C@@]5(C)CCCc6sc(N)c(C#N)c65)n4)n3)[C@@H](C)C2)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "202",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 2.723,
+          "e3_min_distance_A": 2.567,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "E",
+          "ligand_residue": "202",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.533,
+          "e3_min_distance_A": 2.447,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "202",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 2.723,
+        "e3_min_distance_A": 2.567,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 16,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "2"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8QW7",
+      "source_url": "https://www.rcsb.org/structure/8QW7",
+      "title": "Crystal Structure of compound 4 in complex with KRAS G12V C118S GDP and pVHL:ElonginC:ElonginB",
+      "resolution_A": 2.36,
+      "methods": [
+        "X-RAY DIFFRACTION"
+      ],
+      "release_date": "2023-12-06",
+      "citation_doi": "10.1126/science.adm8684",
+      "coordinate_sha256": "cd1ff9933d3c8c321bf81a74528a3a2c2b97ffee9c72a17692eaa38b43c4a73f",
+      "reasons": [],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "X53",
+      "target_uniprot": "P01116",
+      "target_family": "RAS",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "test",
+      "ccd_sha256": "9d94ecb2056bbea771305bc0899f6b0aaf9699189df09c950bc76ef48b99c005",
+      "whole_ligand_scaffold_sha256": "3288dbef8f45d72792a105dce3f6d4b297143ded91ae07c9664515e827e5a8d3",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](c2cc(OCCCCN3CCCN(c4nccc(-c5noc([C@@]6(C)CCCc7sc(N)c(C#N)c76)n5)n4)[C@@H](C)C3)no2)C(C)C)cc1",
+      "expected_heavy_atoms": 70,
+      "observed_copies": [
+        {
+          "ligand_chain": "B",
+          "ligand_residue": "401",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 3.064,
+          "e3_min_distance_A": 2.539,
+          "missing_atoms": [],
+          "extra_atoms": []
+        },
+        {
+          "ligand_chain": "F",
+          "ligand_residue": "401",
+          "poi_chain": "E",
+          "e3_chain": "F",
+          "poi_min_distance_A": 2.633,
+          "e3_min_distance_A": 2.58,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "B",
+        "ligand_residue": "401",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 3.064,
+        "e3_min_distance_A": 2.539,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 13,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "eligible",
+      "input_strata_available": [
+        "retrospective_bound_components"
+      ],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8R5H",
+      "source_url": "https://www.rcsb.org/structure/8R5H",
+      "title": "Ubiquitin ligation to neosubstrate by a cullin-RING E3 ligase & Cdc34: NEDD8-CUL2-RBX1-ELOB/C-VHL-MZ1 with trapped UBE2R2~donor UB-BRD4 BD2",
+      "resolution_A": 3.44,
+      "methods": [
+        "ELECTRON MICROSCOPY"
+      ],
+      "release_date": "2024-02-21",
+      "citation_doi": "10.1016/j.molcel.2024.01.022",
+      "coordinate_sha256": "aa465b6171ebcefa4da00adf89bf80c690986866e181a07a49d811ed8de977fc",
+      "reasons": [
+        "Not an X-ray crystal structure; separate experimental stratum required."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "759",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+      "whole_ligand_scaffold_sha256": "463a74ee1118060ec9ad9e39d28bfbfc10e6c43806ac76f79147f560d948fbfe",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)COCCOCCOCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "H",
+          "ligand_residue": "301",
+          "poi_chain": "F",
+          "e3_chain": "H",
+          "poi_min_distance_A": 3.315,
+          "e3_min_distance_A": 2.797,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "H",
+        "ligand_residue": "301",
+        "poi_chain": "F",
+        "e3_chain": "H",
+        "poi_min_distance_A": 3.315,
+        "e3_min_distance_A": 2.797,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 10,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "excluded",
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    },
+    {
+      "pdb_id": "8RWZ",
+      "source_url": "https://www.rcsb.org/structure/8RWZ",
+      "title": "Open non-crosslinked structure Brd4BD2-MZ1-(NEDD8)-CRL2VHL",
+      "resolution_A": 4.0,
+      "methods": [
+        "ELECTRON MICROSCOPY"
+      ],
+      "release_date": "2024-03-06",
+      "citation_doi": "10.1126/sciadv.ado6492",
+      "coordinate_sha256": "b6bab008af1f6f7cbd36418320fb0669672da2f4a81851588191eef927d59bd8",
+      "reasons": [
+        "Not an X-ray crystal structure; separate experimental stratum required."
+      ],
+      "deepternary_published_test_overlap": false,
+      "learned_training_overlap": "unknown; audit each checkpoint before external comparison",
+      "classification": "heterobifunctional_PROTAC_ternary",
+      "ligand": "759",
+      "target_uniprot": "O60885",
+      "target_family": "BET",
+      "e3": "VHL",
+      "e3_uniprot": "P40337",
+      "split": "development",
+      "ccd_sha256": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+      "whole_ligand_scaffold_sha256": "463a74ee1118060ec9ad9e39d28bfbfc10e6c43806ac76f79147f560d948fbfe",
+      "ligand_smiles": "Cc1ncsc1-c1ccc(CNC(=O)[C@@H]2C[C@@H](O)CN2C(=O)[C@@H](NC(=O)COCCOCCOCCNC(=O)C[C@@H]2N=C(c3ccc(Cl)cc3)c3c(sc(C)c3C)-n3c(C)nnc32)C(C)(C)C)cc1",
+      "expected_heavy_atoms": 69,
+      "observed_copies": [
+        {
+          "ligand_chain": "A",
+          "ligand_residue": "501",
+          "poi_chain": "A",
+          "e3_chain": "B",
+          "poi_min_distance_A": 3.189,
+          "e3_min_distance_A": 4.207,
+          "missing_atoms": [],
+          "extra_atoms": []
+        }
+      ],
+      "selection": {
+        "ligand_chain": "A",
+        "ligand_residue": "501",
+        "poi_chain": "A",
+        "e3_chain": "B",
+        "poi_min_distance_A": 3.189,
+        "e3_min_distance_A": 4.207,
+        "missing_atoms": [],
+        "extra_atoms": []
+      },
+      "native_ppi_contacts_5A": 2,
+      "ppi_metric_applicable": true,
+      "assembly_ids_with_identity_operation": [
+        "1"
+      ],
+      "covalent_ligand_link": false,
+      "status": "excluded",
+      "exclusion_stage": "scope_or_structure_quality",
+      "input_strata_available": [],
+      "prediction_evaluated_by_TOPICS": false,
+      "complete_head_mapping_status": "pending_chemical_curation"
+    }
+  ],
+  "protocol": {
+    "id": "topics-benchmark-v1",
+    "frozen_on": "2026-09-12",
+    "experimental_stratum": "X-ray crystallography, resolution <= 4.0 A",
+    "scope": "Noncovalent heterobifunctional PROTAC ternaries; complete heavy-atom identities; one representative copy per PDB entry",
+    "split_unit": "Target-family and whole-ligand Bemis-Murcko scaffold groups; common E3-binding substructures do not alone define a scaffold group",
+    "input_strata": [
+      "retrospective_bound_components",
+      "independent_binary_components",
+      "apo_components",
+      "sequence_only"
+    ],
+    "primary_input_stratum": "retrospective_bound_components",
+    "primary_seeds": [
+      42,
+      43,
+      44
+    ],
+    "candidates_per_seed": 32,
+    "maximum_candidates": 96,
+    "cpu_threads": 1,
+    "cpu_wall_seconds_per_case": 1800,
+    "cpu_peak_memory_GiB": 4,
+    "gpu_comparison": "Separate track only after measured memory checks; fixed hardware and identical time budget for compared methods",
+    "external_evaluation_seconds_per_case": 1800,
+    "selection": "Report original rank success@1/5/10 and oracle separately; add cluster representatives as a separate endpoint after clustering exists",
+    "structural_criteria": {
+      "ppi_dockq_minimum": 0.23,
+      "ligand_symmetry_rmsd_maximum_A": 2.0,
+      "head_local_rmsd_maximum_A": 2.0,
+      "non_ppi_exploratory_e3_ca_rmsd_maximum_A": 5.0
+    },
+    "chemical_criteria": "PoseBusters 0.6.5 mol_fast plus defined tetrahedral/double-bond stereo; typed heavy-atom intercomponent d < 0.75*(r1+r2) counts must be zero",
+    "denominator": "Every eligible system, including preparation failures, timeouts and no feasible candidate; report missing assessment coverage separately",
+    "test_policy": "No prediction runs, tuning, head selection based on performance or rank inspection on test groups until pipeline freeze. Reference metadata and completeness may be curated now.",
+    "uncertainty": "Paired per-system results and group-level intervals; do not treat copies or conformers as independent systems",
+    "readiness": "Structural inventory and split assignments frozen. Runnable P1 inputs, complete head/linker definitions and independent binary/apo sources remain to be curated before a full benchmark execution."
+  },
+  "counts": {
+    "inventory": 43,
+    "eligible": 32,
+    "excluded": 11,
+    "eligible_by_split": {
+      "development": 16,
+      "validation": 10,
+      "test": 6
+    }
+  }
+}

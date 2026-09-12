@@ -1,0 +1,35 @@
+biopython==1.88
+    # via dockq
+colorama==0.4.6
+    # via parallelbar
+dockq==2.1.3
+    # via -r requirements-evaluation.txt
+networkx==3.6.1
+    # via dockq
+numpy==1.26.4
+    # via
+    #   biopython
+    #   dockq
+    #   pandas
+    #   posebusters
+    #   rdkit
+pandas==3.0.5
+    # via posebusters
+parallelbar==2.5
+    # via dockq
+pillow==12.3.0
+    # via rdkit
+posebusters==0.6.5
+    # via -r requirements-evaluation.txt
+python-dateutil==2.9.0.post0
+    # via pandas
+pyyaml==6.0.3
+    # via posebusters
+rdkit==2026.3.6
+    # via posebusters
+six==1.17.0
+    # via python-dateutil
+threadpoolctl==3.6.0
+    # via -r requirements-evaluation.txt
+tqdm==4.70.1
+    # via parallelbar

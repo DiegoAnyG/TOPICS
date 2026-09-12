@@ -2,6 +2,16 @@
 
 Newest first. State what changed, why and how it was verified.
 
+## 2026-09-12 — P0 independent assessment
+
+- Add all-candidate DockQ/chemical assessment, identity-safe mappings and offline scientific exports.
+- Freeze a 32-case protected inventory with exclusion provenance and recheck all 192 baseline candidates.
+
+Verification: native identity, transforms, permutations, explicit mmCIF/head mapping, stereochemistry,
+empty interfaces, optional-worker failures, corruption detection, inventory leakage checks and
+isolated wheel build. Original prediction/ranking code, production lock and control files are preserved.
+See docs/P0_RESULTS.md for measured results and the final validation record.
+
 ## 2026-09-12 — Accuracy investigation and roadmap
 
 - Added a cited research report, offline HTML/PDF and a staged accuracy implementation plan.

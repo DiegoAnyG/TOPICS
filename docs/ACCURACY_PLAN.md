@@ -1,24 +1,31 @@
 # TOPICS Accuracy Implementation Checklist
 
-Proposed on 2026-09-12. Scientific changes below are not implemented. The rationale,
+Proposed on 2026-09-12. P0 is implemented with the scope and limits in [ASSESSMENT.md](ASSESSMENT.md);
+scientific sampling/ranking changes in P1–P4 remain pending. The rationale,
 method comparison, estimates and citations are in [ACCURACY_RESEARCH.md](ACCURACY_RESEARCH.md).
 Keep baseline commit `b2ae904` and its measured outputs available for comparison.
 
 ## P0 — Evaluation and protected benchmark
 
-- [ ] Add optional DockQ evaluation with explicit chain mapping, role-defined RMSDs and
+- [x] Add optional DockQ evaluation with explicit chain mapping, role-defined RMSDs and
   symmetry-aware ligand evaluation. Retain existing metrics under their original definitions.
-- [ ] Define chemical-validity checks, complete-head RMSD and component-specific clashes.
+- [x] Define chemical-validity checks, complete-head RMSD and component-specific clashes.
   Cases with absent native PPI contacts need explicit metric applicability and fallback.
-- [ ] Curate an initial inventory aiming at 20–40 eligible ternary cases. Record all
+- [x] Curate an initial inventory aiming at 20–40 eligible ternary cases. Record all
   exclusions; separate binary structures, molecular glues and incomplete ligands.
-- [ ] Freeze group-based development/validation/test splits, training-overlap annotations,
+- [x] Freeze group-based development/validation/test splits, training-overlap annotations,
   input difficulty, success criteria, seed policy and equal compute budgets.
-- [ ] Verify native identity, rigid-transform invariance, residue/atom identity and failure
+- [x] Verify native identity, rigid-transform invariance, residue/atom identity and failure
   reporting. Confirm evaluation references cannot enter generation or ranking.
 
 Gate: the evaluator and inventory are reproducible before changing scientific scoring.
 The existing six-pose DockQ audit is a pilot, not this complete adapter.
+
+Delivered: all 192 existing candidates assessed, 43 entries reviewed, 32 eligible cases with
+protected splits. Complete-head metrics accept curated definitions but remain unavailable
+for the existing ring-only controls. P1 must curate those definitions and runnable benchmark
+inputs; full benchmark execution also requires budget enforcement. Training overlap is unknown,
+not assumed absent. Missing protein residues require curated complete mappings, not automatic alignment.
 
 ## P1 — Complete heads and linker sampling
 

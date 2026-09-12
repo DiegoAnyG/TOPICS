@@ -63,6 +63,10 @@ see [CuPy guidance](https://docs.cupy.dev/en/stable/user_guide/performance.html)
 
 ## Evaluation
 
+The original evaluation below remains available. The separate `topics assess` adapter adds
+complete identity mapping, DockQ, chemical checks, symmetry-aware ligand RMSD and joint
+criteria; see [ASSESSMENT.md](ASSESSMENT.md) for definitions and explicit applicability limits.
+
 Control specifications name author chains, ligand residue and chemically explicit head atoms.
 Binary partners are extracted from the ternary crystal and placed in separate local frames.
 Bound protein shapes and local head poses are retained: this is retrospective bound-component

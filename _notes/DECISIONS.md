@@ -2,6 +2,25 @@
 
 Newest first. Record each decision, its reason and its cost. Announce and document reversals.
 
+## 2026-09-12 — Independent assessment and frozen inventory
+
+Decision: evaluate saved ensembles in a separate output directory and run optional DockQ and
+PoseBusters in an isolated environment with one thread. Keep legacy definitions and ranking.
+Reason: DockQ requires NumPy below 2; reference-based assessment must not change generation.
+Cost: a separate environment and explicit mapping contract; multichain and incomplete-residue
+assessment require further adapters rather than silent atom omission.
+
+Decision: report the mol_fast subset, typed component sterics and stereo separately. Require
+explicit complete chemical heads for whole-head/joint results; missing annotations remain null.
+Reason: ligand-only geometry can pass while a complex has severe steric violations.
+Cost: joint accuracy cannot yet be reported for ring-only baseline controls.
+
+Decision: freeze a 32-case structural inventory grouped by target family and whole-ligand
+scaffold, with 11 transparent exclusions and learned-training overlap marked unknown.
+Reason: repeated crystal copies and inspected development controls must not leak into test results.
+Cost: chemical preparation exclusions, six test systems and pending runnable inputs limit the
+first comparison. Any eligibility change requires an explicit versioned amendment.
+
 ## 2026-09-12 — Accuracy roadmap
 
 Decision: establish independent metrics and a protected benchmark before modifying sampling

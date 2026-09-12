@@ -15,6 +15,54 @@ import plotly.graph_objects as go
 COLORS = {"POI": "#0072B2", "E3": "#D55E00", "PROTAC": "#009E73", "Crystal E3": "#777777"}
 
 
+def render_assessment(root, result):
+    """Export every assessed candidate, with missing metrics retained as gaps."""
+    root = Path(root)
+    rows = result["candidates"]
+    ranks = [row["rank"] for row in rows]
+    columns = [("dockq", "PPI DockQ (higher is better)"),
+               ("ligand_symmetry_rmsd_A", "Ligand RMSD after POI fit (Å)"),
+               ("e3_ca_rmsd_A", "E3 Cα RMSD after POI fit (Å)")]
+    sections = []
+    figure, axes = plt.subplots(1, len(columns), figsize=(12, 3.7), layout="constrained")
+    for index, ((metric, label), axis) in enumerate(zip(columns, axes)):
+        values = [row.get(metric) for row in rows]
+        colors = ["#009E73" if row["steric_valid"] else "#D55E00" for row in rows]
+        chart = go.Figure(go.Scatter(x=ranks, y=values, mode="markers", text=[row["candidate"] for row in rows],
+                                    marker={"color": colors}, hovertemplate="%{text}<br>Rank %{x}<br>%{y:.4f}<extra></extra>"))
+        chart.update_layout(template="plotly_white", xaxis_title="Original candidate rank", yaxis_title=label,
+                            title=label, height=350)
+        sections.append(chart.to_html(full_html=False, include_plotlyjs=True if index == 0 else False))
+        mask = [i for i, value in enumerate(values) if value is not None]
+        axis.scatter([ranks[i] for i in mask], [values[i] for i in mask], c=[colors[i] for i in mask], s=12)
+        if metric == "dockq":
+            axis.axhline(0.23, color="#555555", linestyle="--", linewidth=0.8)
+            axis.set_ylim(0, 1)
+        axis.set(xlabel="Original candidate rank", ylabel=label)
+    figure.suptitle("Independent assessment; orange = typed steric violations, green = none")
+    for suffix in ("svg", "pdf", "png"):
+        figure.savefig(root / ("assessment." + suffix), dpi=600)
+    plt.close(figure)
+    fields = ["candidate", "rank", "dockq", "ligand_symmetry_rmsd_A", "e3_ca_rmsd_A", "chemical_valid", "steric_valid", "joint_success", "errors"]
+    table = "<table><thead><tr>" + "".join("<th>" + html.escape(f) + "</th>" for f in fields) + "</tr></thead><tbody>"
+    for row in rows:
+        table += "<tr>" + "".join("<td>" + html.escape(str(row.get(f)) if row.get(f) is not None else "Not assessed") + "</td>" for f in fields) + "</tr>"
+    table += "</tbody></table>"
+    details = {k: v for k, v in result.items() if k != "candidates"}
+    content = ("<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width'>"
+               "<title>TOPICS independent assessment</title><style>body{font:16px system-ui;margin:2rem;max-width:1200px}"
+               "table{border-collapse:collapse;font-size:13px}td,th{padding:.4rem;border:1px solid #ddd}"
+               "pre{white-space:pre-wrap;overflow-wrap:anywhere}.data{overflow:auto}</style><body>"
+               "<h1>TOPICS independent assessment</h1><p>All candidates retain their original rank. "
+               "Chemical validity is the mol_fast ligand-geometry subset plus defined stereochemistry. "
+               "Joint success also requires explicit complete heads. Missing results are not passes.</p>"
+               "<p><a href='assessment.csv'>Source data (CSV)</a> · <a href='assessment.json'>Provenance (JSON)</a> · "
+               "<a href='assessment.svg'>SVG</a> · <a href='assessment.pdf'>PDF</a> · <a href='assessment.png'>600 dpi PNG</a></p>"
+               + "".join(sections) + "<div class='data'>" + table + "</div><details><summary>Protocol and provenance</summary><pre>"
+               + html.escape(json.dumps(details, indent=2)) + "</pre></details></body></html>")
+    (root / "report.html").write_text(content)
+
+
 def render(run_dir):
     root = Path(run_dir)
     manifest = json.loads((root / "manifest.json").read_text())

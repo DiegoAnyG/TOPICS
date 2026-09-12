@@ -1,0 +1,394 @@
+{
+  "manifest_sha256": "ba7a51ab72441d1af4e1b1aa18bbeb3a04630b73fa733be8bc9657c3103e2b70",
+  "verifier_sha256": "d66c55051159aef0c5490c25ccb0a00cf0eff90d4017668461556049cd91d8f6",
+  "summary": {
+    "status": "valid",
+    "protocol": "topics-benchmark-v1",
+    "inventory": 43,
+    "eligible": 32,
+    "excluded": 11,
+    "eligible_by_split": {
+      "development": 16,
+      "validation": 10,
+      "test": 6
+    },
+    "readiness": "Structural inventory and split assignments frozen. Runnable P1 inputs, complete head/linker definitions and independent binary/apo sources remain to be curated before a full benchmark execution."
+  },
+  "cases": [
+    {
+      "pdb_id": "5T35",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 69,
+      "native_ppi_contacts": 15,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6BN7",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 62,
+      "native_ppi_contacts": 36,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6BN8",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "6BN9",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "6BNB",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "6BOY",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 59,
+      "native_ppi_contacts": 41,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6HAX",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 66,
+      "native_ppi_contacts": 21,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6HAY",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 65,
+      "native_ppi_contacts": 18,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6HR2",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 66,
+      "native_ppi_contacts": 18,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6SIS",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 77,
+      "native_ppi_contacts": 15,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6W7O",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 79,
+      "native_ppi_contacts": 30,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6W8I",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 85,
+      "native_ppi_contacts": 21,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "6ZHC",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 93,
+      "native_ppi_contacts": 17,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7JTO",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 86,
+      "native_ppi_contacts": 8,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7JTP",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 73,
+      "native_ppi_contacts": 25,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7KHH",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 77,
+      "native_ppi_contacts": 23,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7PI4",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 70,
+      "native_ppi_contacts": 16,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7Q2J",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 72,
+      "native_ppi_contacts": 10,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7S4E",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 67,
+      "native_ppi_contacts": 20,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7Z6L",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 70,
+      "native_ppi_contacts": 4,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7Z76",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 73,
+      "native_ppi_contacts": 21,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7Z77",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 69,
+      "native_ppi_contacts": 8,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "7ZNT",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 69,
+      "native_ppi_contacts": 16,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BB2",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 82,
+      "native_ppi_contacts": 2,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BB3",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 82,
+      "native_ppi_contacts": 1,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BB4",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 71,
+      "native_ppi_contacts": 5,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BB5",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 76,
+      "native_ppi_contacts": 3,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BDS",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8BDT",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 76,
+      "native_ppi_contacts": 19,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8BDX",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8BEB",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 69,
+      "native_ppi_contacts": 17,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8DSO",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8FY0",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8FY1",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8FY2",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 115,
+      "native_ppi_contacts": 5,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8PC2",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 96,
+      "native_ppi_contacts": 9,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8QJR",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 77,
+      "native_ppi_contacts": 0,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8QU8",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8QVU",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 72,
+      "native_ppi_contacts": 8,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8QW6",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 69,
+      "native_ppi_contacts": 16,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8QW7",
+      "coordinate_hash_verified": true,
+      "status": "eligible",
+      "ccd_hash_verified": true,
+      "complete_heavy_atoms": 70,
+      "native_ppi_contacts": 13,
+      "assembly_verified": true,
+      "scaffold_verified": true
+    },
+    {
+      "pdb_id": "8R5H",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    },
+    {
+      "pdb_id": "8RWZ",
+      "coordinate_hash_verified": true,
+      "status": "excluded"
+    }
+  ]
+}

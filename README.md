@@ -8,7 +8,9 @@ substantial prediction errors. See [measured results](docs/VALIDATION.md).
 
 The [accuracy research](docs/ACCURACY_RESEARCH.md) audits the baseline and compares published methods.
 Read the [implementation plan](docs/ACCURACY_PLAN.md), [offline report](docs/ACCURACY_RESEARCH.html)
-or [PDF](docs/ACCURACY_RESEARCH.pdf). Proposed accuracy improvements are not yet implemented.
+or [PDF](docs/ACCURACY_RESEARCH.pdf). P0 now provides [independent assessment](docs/ASSESSMENT.md)
+and a [protected 32-case inventory](benchmarks/README.md); sampling and ranking improvements
+remain pending. [Full-ensemble results](docs/P0_RESULTS.md) preserve the measured baseline.
 
 ## Install and start
 
@@ -21,6 +23,8 @@ uv run topics
 
 Without uv, create a virtual environment and run `python -m pip install -e .`, then `topics`.
 The terminal menu runs a control, assembles custom inputs, evaluates a run or checks devices.
+Option 5 assesses every saved candidate independently; optional DockQ/PoseBusters setup is
+documented in [ASSESSMENT.md](docs/ASSESSMENT.md).
 
 ```bash
 uv run topics doctor

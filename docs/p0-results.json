@@ -1,0 +1,622 @@
+{
+  "schema_version": 1,
+  "assessed_on": "2026-09-12",
+  "prediction_baseline_commit": "b2ae904bcd605b58c2e29e533e16305d8d2e5cf9",
+  "original_control_files_unchanged": 46,
+  "cases": {
+    "5t35": {
+      "schema_version": 1,
+      "status": "complete",
+      "protocol": "topics-assessment-v1",
+      "reference_used_for_ranking": false,
+      "candidate_count": 96,
+      "input_hashes": {
+        "config": "b5f31e15248492af0f07385b8825390e957ce79eee17aca7eb8653b1b58fb755",
+        "ligand_ccd": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+        "poi": "743679c6b81bf7fda8179c8a9745e2d5d9f881cf7b3f07612f7c7f261f1de535",
+        "e3": "118904b351c7e7ce0c6ed374743fc0a4d314aeec86204255e5a08fe3d5f5a9d0"
+      },
+      "prediction_hashes": {
+        "candidates.csv": "6d9b61c2e3b1cc86e19311e14e13892ea557aedd2f35588597e6ca2b5e6b026d",
+        "ensemble.npz": "30f3504e9f9b5abbaea6edeacf23dd0aff500a122604c967744470a37d472a61",
+        "ensemble.sdf": "c0642fa59d2ebfa4508be1ac3ed95265eb3248d640146df33a9965c0b3111287",
+        "best.cif": "961413d9f2cafbf28b1ccbad3f7acce3de67055030a0ca2bf8dfcc07c84eab40"
+      },
+      "prediction_manifest_sha256": "358af0088909e1ff2a5676bac0b0403c7a34235a985ebb5df266e282f09f3f0b",
+      "reference_sha256": "dbbb9672f42b2121f8c1b4ee13274691bd0b437fe54f0ec254da8d065726b423",
+      "mapping_sha256": null,
+      "mapping": {},
+      "versions": {
+        "numpy": "2.4.6",
+        "rdkit": "2026.3.6",
+        "gemmi": "0.7.5",
+        "scipy": "1.17.1"
+      },
+      "implementation_sha256": {
+        "structures.py": "d78c3f86f5c58fe146a6da77dcf880d6f5d5bc2320472dd35eae91e7dd6a81c3",
+        "assessment.py": "0627e02786394cdcb2de41536bef74e9b5718346d799b4a8c4780b52104ec88d",
+        "inventory.py": "08d7b8f72a2b3ef03874e5a0c66dbc2ce84eb56ab4262a5bc3349b0b44d2d1ab",
+        "chemistry.py": "93213646498f3045f87d1d80f6f4d7c4c39951e76ee3a296a7676a0fddba541f",
+        "cli.py": "a8b0bdf44508e351a1662e3eac1ec7ecc5bcb0f54bf4455f833284d6f7766937",
+        "geometry.py": "acd07caa3a8d83662bd6cc817c7ab196986a80cec3ddde71c9f87c8aa3b1b581",
+        "__init__.py": "611014a1e13238a47d929cb3b483bd06ef88cb003f101250adda66905102cb12",
+        "report.py": "b1151bf683fab45f919a91b24607c93a42e6ac5b341114b8242fb06a1c0358d7",
+        "benchmark.py": "b4c4762464e006424cd55e6c8b5288078a1e100bb3216798ce0c0c2ee62ee3c3",
+        "assessment_worker.py": "c19a18dc7c4b02a44a6f11944b0458f2aed8907203887b41fd57202fffa53a2f",
+        "__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+        "engine.py": "56323623ec5f0659e7d689a0b3a643733796c73e5a78c3c12830e73a004fffec"
+      },
+      "generation_statistics": [
+        {
+          "seed": 42,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        },
+        {
+          "seed": 43,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        },
+        {
+          "seed": 44,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        }
+      ],
+      "prediction_parameters": {
+        "conformers_per_seed": 32,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "threads": 1,
+        "device_requested": "cpu",
+        "device_used": "cpu",
+        "pause_seconds": 0.05,
+        "clash_cutoff_A": 2.0,
+        "contact_cutoff_A": 5.0,
+        "embedding": "ETKDGv3, random coordinates, enforced chirality",
+        "forcefield": "MMFF94s, 1500 iterations"
+      },
+      "native_ppi_contacts": 15,
+      "native_chemistry_stereo_valid": true,
+      "symmetry_mappings": 24,
+      "head_metric_applicable": false,
+      "criteria": {
+        "ppi_dockq_minimum": 0.23,
+        "ligand_symmetry_rmsd_maximum_A": 2.0,
+        "vdw_distance_fraction": 0.75,
+        "head_local_rmsd_maximum_A": 2.0,
+        "no_native_ppi_fallback": "E3 CA RMSD <= 5 A after fitting POI; exploratory, separately stratified"
+      },
+      "limitations": [
+        "Bound-component controls do not measure blind prediction accuracy.",
+        "mol_fast is a PoseBusters ligand-geometry subset, not full PB-valid.",
+        "Sterics exclude hydrogens, cofactors, solvent and covalent cross-component bonds.",
+        "Joint success requires curated complete heads; absent definitions produce null, not a pass.",
+        "All atoms must map explicitly; missing residues require curated matched structures.",
+        "Success@k uses saved candidates, not yet distinct structural clusters."
+      ],
+      "native_pairs": {
+        "ppi": {
+          "contacts_5A": 15,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        },
+        "poi_ligand": {
+          "contacts_5A": 17,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        },
+        "e3_ligand": {
+          "contacts_5A": 17,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        }
+      },
+      "external_tools": {
+        "status": "complete",
+        "versions": {
+          "DockQ": "2.1.3",
+          "posebusters": "0.6.5",
+          "rdkit": "2026.3.6",
+          "numpy": "1.26.4",
+          "biopython": "1.88"
+        },
+        "threads": 1,
+        "mapping": {
+          "native_A": "model_A (POI)",
+          "native_B": "model_B (E3)"
+        },
+        "posebusters_config": "mol_fast",
+        "native_control": {
+          "dockq": 0.999999999999992,
+          "dockq_irmsd_A": 2.3134449793045157e-07,
+          "dockq_lrmsd_A": 1.4112406166378216e-07,
+          "dockq_fnat": 1.0,
+          "dockq_status": "assessed",
+          "pb_mol_fast_valid": true,
+          "pb_checks": {
+            "mol_pred_loaded": true,
+            "sanitization": true,
+            "inchi_convertible": true,
+            "all_atoms_connected": true,
+            "no_radicals": true,
+            "bond_lengths": true,
+            "bond_angles": true,
+            "internal_steric_clash": true,
+            "aromatic_ring_flatness": true,
+            "non-aromatic_ring_non-flatness": true,
+            "double_bond_flatness": true
+          }
+        }
+      },
+      "summary": {
+        "ppi_success": {
+          "assessed": 96,
+          "passed": 1,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": true
+        },
+        "ligand_success": {
+          "assessed": 96,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": false
+        },
+        "chemical_valid": {
+          "assessed": 96,
+          "passed": 96,
+          "candidate_denominator": 96,
+          "success_at_1": true,
+          "success_at_5": true,
+          "success_at_10": true,
+          "oracle_success": true
+        },
+        "steric_valid": {
+          "assessed": 96,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": false
+        },
+        "joint_success": {
+          "assessed": 0,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": null,
+          "success_at_5": null,
+          "success_at_10": null,
+          "oracle_success": null
+        }
+      },
+      "compute_seconds": 33.93889066099655,
+      "top_ranked": {
+        "candidate": "s44_c15",
+        "rank": 1,
+        "seed": 44,
+        "e3_ca_rmsd_A": 51.182776465798206,
+        "ligand_rmsd_A": 11.107009866011646,
+        "ligand_symmetry_rmsd_A": 11.092131744941543,
+        "native_contact_recall": 0.0,
+        "contact_precision": 0.0,
+        "stereo_valid": true,
+        "errors": [],
+        "ppi_contacts_5A": 21,
+        "ppi_clashes_2A": 15,
+        "ppi_vdw_clashes": 29,
+        "poi_ligand_contacts_5A": 18,
+        "poi_ligand_clashes_2A": 2,
+        "poi_ligand_vdw_clashes": 9,
+        "e3_ligand_contacts_5A": 8,
+        "e3_ligand_clashes_2A": 5,
+        "e3_ligand_vdw_clashes": 15,
+        "poi_anchor_local_rmsd_A": 0.043470632994302566,
+        "poi_head_local_rmsd_A": null,
+        "e3_anchor_local_rmsd_A": 0.2771240517528993,
+        "e3_head_local_rmsd_A": null,
+        "pb_mol_fast_valid": true,
+        "pb_checks": {
+          "mol_pred_loaded": true,
+          "sanitization": true,
+          "inchi_convertible": true,
+          "all_atoms_connected": true,
+          "no_radicals": true,
+          "bond_lengths": true,
+          "bond_angles": true,
+          "internal_steric_clash": true,
+          "aromatic_ring_flatness": true,
+          "non-aromatic_ring_non-flatness": true,
+          "double_bond_flatness": true
+        },
+        "dockq": 0.015852257695311157,
+        "dockq_irmsd_A": 11.813065553731084,
+        "dockq_lrmsd_A": 46.986247119299236,
+        "dockq_fnat": 0.0,
+        "dockq_status": "assessed",
+        "ppi_success": false,
+        "ligand_success": false,
+        "chemical_valid": true,
+        "steric_valid": false,
+        "no_ppi_fallback_success": null,
+        "joint_success": null
+      },
+      "best_ppi_dockq": {
+        "candidate": "s42_c27",
+        "rank": 24,
+        "seed": 42,
+        "e3_ca_rmsd_A": 11.726925097920226,
+        "ligand_rmsd_A": 5.785942558384484,
+        "ligand_symmetry_rmsd_A": 5.774654571045448,
+        "native_contact_recall": 0.5333333333333333,
+        "contact_precision": 0.05063291139240506,
+        "stereo_valid": true,
+        "errors": [],
+        "ppi_contacts_5A": 158,
+        "ppi_clashes_2A": 162,
+        "ppi_vdw_clashes": 337,
+        "poi_ligand_contacts_5A": 21,
+        "poi_ligand_clashes_2A": 39,
+        "poi_ligand_vdw_clashes": 76,
+        "e3_ligand_contacts_5A": 23,
+        "e3_ligand_clashes_2A": 37,
+        "e3_ligand_vdw_clashes": 98,
+        "poi_anchor_local_rmsd_A": 0.044667711102471364,
+        "poi_head_local_rmsd_A": null,
+        "e3_anchor_local_rmsd_A": 0.0448103481351204,
+        "e3_head_local_rmsd_A": null,
+        "pb_mol_fast_valid": true,
+        "pb_checks": {
+          "mol_pred_loaded": true,
+          "sanitization": true,
+          "inchi_convertible": true,
+          "all_atoms_connected": true,
+          "no_radicals": true,
+          "bond_lengths": true,
+          "bond_angles": true,
+          "internal_steric_clash": true,
+          "aromatic_ring_flatness": true,
+          "non-aromatic_ring_non-flatness": true,
+          "double_bond_flatness": true
+        },
+        "dockq": 0.31630562576709437,
+        "dockq_irmsd_A": 4.749323174801887,
+        "dockq_lrmsd_A": 12.253156588787972,
+        "dockq_fnat": 0.5333333333333333,
+        "dockq_status": "assessed",
+        "ppi_success": true,
+        "ligand_success": false,
+        "chemical_valid": true,
+        "steric_valid": false,
+        "no_ppi_fallback_success": null,
+        "joint_success": null
+      },
+      "assessment_json_sha256": "047d3ec27be8dd65f9906e82c2b75a5509142975c980fae1c395d80153bc9032",
+      "observed_resources": {
+        "peak_process_RSS_MiB": 294.19140625,
+        "User time": 37.16,
+        "System time": 0.54,
+        "measurement": "GNU time -v, enclosing assessment command; maximum process RSS, not a sum of simultaneous parent/child RSS"
+      }
+    },
+    "6boy": {
+      "schema_version": 1,
+      "status": "complete",
+      "protocol": "topics-assessment-v1",
+      "reference_used_for_ranking": false,
+      "candidate_count": 96,
+      "input_hashes": {
+        "config": "1b8cc4c861d207b4b1e296c129e81c535e8cc0c7087b9029d4cc52f08444b102",
+        "ligand_ccd": "d54c5e978045ccf6a3ffbd2bcff24964b42a5e1217c016f11b462bb4c854baf3",
+        "poi": "812b99108273e8fe485d0a3d9cfd07a8456296421b31d0b32a5e016f1288fd72",
+        "e3": "786bdaa6ff175a481a1bc7179e02e12572f8999cde205fccce8eb6a2ac9505ee"
+      },
+      "prediction_hashes": {
+        "candidates.csv": "f5f9c98d7ef6de505b2cd5e63e6de4d91a15b6ed9b8986f53ac603d41560405f",
+        "ensemble.npz": "8577d246a13459803da4e3894e91cd1798728bc5ac5b19479f5adeb00034ab37",
+        "ensemble.sdf": "b7f9b1e8be29202c84d7e7da310a62b70362fb5d394e681aa04ea98f62191738",
+        "best.cif": "fa74cc1c39581b4b3d278c929ab1eafe42f539152c3dfce063f347bd2f151dcf"
+      },
+      "prediction_manifest_sha256": "e0a7465801a915e993ea1057ad887fe8e431282c595410bdca76876eccc6fbc2",
+      "reference_sha256": "39fa4cc2bea75115cd4704f039f4628fe03a0aca0c4ae88935c6ff2d63202dea",
+      "mapping_sha256": null,
+      "mapping": {},
+      "versions": {
+        "numpy": "2.4.6",
+        "rdkit": "2026.3.6",
+        "gemmi": "0.7.5",
+        "scipy": "1.17.1"
+      },
+      "implementation_sha256": {
+        "structures.py": "d78c3f86f5c58fe146a6da77dcf880d6f5d5bc2320472dd35eae91e7dd6a81c3",
+        "assessment.py": "0627e02786394cdcb2de41536bef74e9b5718346d799b4a8c4780b52104ec88d",
+        "inventory.py": "08d7b8f72a2b3ef03874e5a0c66dbc2ce84eb56ab4262a5bc3349b0b44d2d1ab",
+        "chemistry.py": "93213646498f3045f87d1d80f6f4d7c4c39951e76ee3a296a7676a0fddba541f",
+        "cli.py": "a8b0bdf44508e351a1662e3eac1ec7ecc5bcb0f54bf4455f833284d6f7766937",
+        "geometry.py": "acd07caa3a8d83662bd6cc817c7ab196986a80cec3ddde71c9f87c8aa3b1b581",
+        "__init__.py": "611014a1e13238a47d929cb3b483bd06ef88cb003f101250adda66905102cb12",
+        "report.py": "b1151bf683fab45f919a91b24607c93a42e6ac5b341114b8242fb06a1c0358d7",
+        "benchmark.py": "b4c4762464e006424cd55e6c8b5288078a1e100bb3216798ce0c0c2ee62ee3c3",
+        "assessment_worker.py": "c19a18dc7c4b02a44a6f11944b0458f2aed8907203887b41fd57202fffa53a2f",
+        "__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+        "engine.py": "56323623ec5f0659e7d689a0b3a643733796c73e5a78c3c12830e73a004fffec"
+      },
+      "generation_statistics": [
+        {
+          "seed": 42,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        },
+        {
+          "seed": 43,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        },
+        {
+          "seed": 44,
+          "requested": 32,
+          "embedded": 32,
+          "accepted": 32
+        }
+      ],
+      "prediction_parameters": {
+        "conformers_per_seed": 32,
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "threads": 1,
+        "device_requested": "cpu",
+        "device_used": "cpu",
+        "pause_seconds": 0.05,
+        "clash_cutoff_A": 2.0,
+        "contact_cutoff_A": 5.0,
+        "embedding": "ETKDGv3, random coordinates, enforced chirality",
+        "forcefield": "MMFF94s, 1500 iterations"
+      },
+      "native_ppi_contacts": 41,
+      "native_chemistry_stereo_valid": true,
+      "symmetry_mappings": 2,
+      "head_metric_applicable": false,
+      "criteria": {
+        "ppi_dockq_minimum": 0.23,
+        "ligand_symmetry_rmsd_maximum_A": 2.0,
+        "vdw_distance_fraction": 0.75,
+        "head_local_rmsd_maximum_A": 2.0,
+        "no_native_ppi_fallback": "E3 CA RMSD <= 5 A after fitting POI; exploratory, separately stratified"
+      },
+      "limitations": [
+        "Bound-component controls do not measure blind prediction accuracy.",
+        "mol_fast is a PoseBusters ligand-geometry subset, not full PB-valid.",
+        "Sterics exclude hydrogens, cofactors, solvent and covalent cross-component bonds.",
+        "Joint success requires curated complete heads; absent definitions produce null, not a pass.",
+        "All atoms must map explicitly; missing residues require curated matched structures.",
+        "Success@k uses saved candidates, not yet distinct structural clusters."
+      ],
+      "native_pairs": {
+        "ppi": {
+          "contacts_5A": 41,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        },
+        "poi_ligand": {
+          "contacts_5A": 14,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        },
+        "e3_ligand": {
+          "contacts_5A": 14,
+          "clashes_2A": 0,
+          "vdw_clashes": 0
+        }
+      },
+      "external_tools": {
+        "status": "complete",
+        "versions": {
+          "DockQ": "2.1.3",
+          "posebusters": "0.6.5",
+          "rdkit": "2026.3.6",
+          "numpy": "1.26.4",
+          "biopython": "1.88"
+        },
+        "threads": 1,
+        "mapping": {
+          "native_A": "model_A (POI)",
+          "native_B": "model_B (E3)"
+        },
+        "posebusters_config": "mol_fast",
+        "native_control": {
+          "dockq": 0.9999999999989222,
+          "dockq_irmsd_A": 2.500810559576235e-06,
+          "dockq_lrmsd_A": 5.727049874818754e-06,
+          "dockq_fnat": 1.0,
+          "dockq_status": "assessed",
+          "pb_mol_fast_valid": true,
+          "pb_checks": {
+            "mol_pred_loaded": true,
+            "sanitization": true,
+            "inchi_convertible": true,
+            "all_atoms_connected": true,
+            "no_radicals": true,
+            "bond_lengths": true,
+            "bond_angles": true,
+            "internal_steric_clash": true,
+            "aromatic_ring_flatness": true,
+            "non-aromatic_ring_non-flatness": true,
+            "double_bond_flatness": true
+          }
+        }
+      },
+      "summary": {
+        "ppi_success": {
+          "assessed": 96,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": false
+        },
+        "ligand_success": {
+          "assessed": 96,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": false
+        },
+        "chemical_valid": {
+          "assessed": 96,
+          "passed": 96,
+          "candidate_denominator": 96,
+          "success_at_1": true,
+          "success_at_5": true,
+          "success_at_10": true,
+          "oracle_success": true
+        },
+        "steric_valid": {
+          "assessed": 96,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": false,
+          "success_at_5": false,
+          "success_at_10": false,
+          "oracle_success": false
+        },
+        "joint_success": {
+          "assessed": 0,
+          "passed": 0,
+          "candidate_denominator": 96,
+          "success_at_1": null,
+          "success_at_5": null,
+          "success_at_10": null,
+          "oracle_success": null
+        }
+      },
+      "compute_seconds": 35.19482900900766,
+      "top_ranked": {
+        "candidate": "s44_c30",
+        "rank": 1,
+        "seed": 44,
+        "e3_ca_rmsd_A": 48.88472784731019,
+        "ligand_rmsd_A": 10.588280063691169,
+        "ligand_symmetry_rmsd_A": 10.570056323028405,
+        "native_contact_recall": 0.0,
+        "contact_precision": 0.0,
+        "stereo_valid": true,
+        "errors": [],
+        "ppi_contacts_5A": 75,
+        "ppi_clashes_2A": 45,
+        "ppi_vdw_clashes": 90,
+        "poi_ligand_contacts_5A": 15,
+        "poi_ligand_clashes_2A": 0,
+        "poi_ligand_vdw_clashes": 2,
+        "e3_ligand_contacts_5A": 14,
+        "e3_ligand_clashes_2A": 23,
+        "e3_ligand_vdw_clashes": 50,
+        "poi_anchor_local_rmsd_A": 0.017724966928102884,
+        "poi_head_local_rmsd_A": null,
+        "e3_anchor_local_rmsd_A": 0.35214948335873975,
+        "e3_head_local_rmsd_A": null,
+        "pb_mol_fast_valid": true,
+        "pb_checks": {
+          "mol_pred_loaded": true,
+          "sanitization": true,
+          "inchi_convertible": true,
+          "all_atoms_connected": true,
+          "no_radicals": true,
+          "bond_lengths": true,
+          "bond_angles": true,
+          "internal_steric_clash": true,
+          "aromatic_ring_flatness": true,
+          "non-aromatic_ring_non-flatness": true,
+          "double_bond_flatness": true
+        },
+        "dockq": 0.06362487440161624,
+        "dockq_irmsd_A": 7.7137864288447675,
+        "dockq_lrmsd_A": 19.889009409069438,
+        "dockq_fnat": 0.0,
+        "dockq_status": "assessed",
+        "ppi_success": false,
+        "ligand_success": false,
+        "chemical_valid": true,
+        "steric_valid": false,
+        "no_ppi_fallback_success": null,
+        "joint_success": null
+      },
+      "best_ppi_dockq": {
+        "candidate": "s44_c8",
+        "rank": 6,
+        "seed": 44,
+        "e3_ca_rmsd_A": 14.735412519008177,
+        "ligand_rmsd_A": 6.627008726423924,
+        "ligand_symmetry_rmsd_A": 6.597630302622951,
+        "native_contact_recall": 0.34146341463414637,
+        "contact_precision": 0.09523809523809523,
+        "stereo_valid": true,
+        "errors": [],
+        "ppi_contacts_5A": 147,
+        "ppi_clashes_2A": 165,
+        "ppi_vdw_clashes": 322,
+        "poi_ligand_contacts_5A": 19,
+        "poi_ligand_clashes_2A": 10,
+        "poi_ligand_vdw_clashes": 18,
+        "e3_ligand_contacts_5A": 19,
+        "e3_ligand_clashes_2A": 1,
+        "e3_ligand_vdw_clashes": 5,
+        "poi_anchor_local_rmsd_A": 0.016836640921544015,
+        "poi_head_local_rmsd_A": null,
+        "e3_anchor_local_rmsd_A": 0.017464587312852716,
+        "e3_head_local_rmsd_A": null,
+        "pb_mol_fast_valid": true,
+        "pb_checks": {
+          "mol_pred_loaded": true,
+          "sanitization": true,
+          "inchi_convertible": true,
+          "all_atoms_connected": true,
+          "no_radicals": true,
+          "bond_lengths": true,
+          "bond_angles": true,
+          "internal_steric_clash": true,
+          "aromatic_ring_flatness": true,
+          "non-aromatic_ring_non-flatness": true,
+          "double_bond_flatness": true
+        },
+        "dockq": 0.2087637039992025,
+        "dockq_irmsd_A": 4.904026109248181,
+        "dockq_lrmsd_A": 17.038630629155076,
+        "dockq_fnat": 0.34146341463414637,
+        "dockq_status": "assessed",
+        "ppi_success": false,
+        "ligand_success": false,
+        "chemical_valid": true,
+        "steric_valid": false,
+        "no_ppi_fallback_success": null,
+        "joint_success": null
+      },
+      "assessment_json_sha256": "21538edcd8976d6e07a6856c73ba149c64706d4b27308f77f9e9c9f18debcee2",
+      "observed_resources": {
+        "peak_process_RSS_MiB": 298.94140625,
+        "User time": 38.45,
+        "System time": 0.54,
+        "measurement": "GNU time -v, enclosing assessment command; maximum process RSS, not a sum of simultaneous parent/child RSS"
+      }
+    }
+  }
+}

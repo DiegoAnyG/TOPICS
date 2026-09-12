@@ -31,15 +31,21 @@ def interactive():
     print("\nTOPICS — ternary assembly and crystallographic controls")
     print("Default: 16 conformers, one CPU thread. Outputs are structural hypotheses.")
     while True:
-        print("\n1  Run a crystallographic control\n2  Assemble from an input JSON\n3  Evaluate a saved run\n4  Check compute devices\n0  Exit")
+        print("\n1  Run a crystallographic control\n2  Assemble from an input JSON\n3  Evaluate a saved run\n4  Check compute devices\n5  Independent ensemble assessment\n0  Exit")
         choice = input("Select: ").strip()
         if choice == "0":
             return 0
         if choice == "4":
             doctor(); continue
-        if choice not in {"1", "2", "3"}:
-            print("Choose 0, 1, 2, 3 or 4."); continue
-        if choice == "3":
+        if choice not in {"1", "2", "3", "5"}:
+            print("Choose 0, 1, 2, 3, 4 or 5."); continue
+        if choice == "5":
+            args = ["assess", input("Run directory: ").strip(), "--input", input("Original input JSON: ").strip(),
+                    "--reference", input("Reference NPZ or mmCIF: ").strip(), "--out", input("New assessment directory: ").strip()]
+            mapping = input("Mapping JSON (optional for matching NPZ identities): ").strip()
+            if mapping:
+                args += ["--mapping", mapping]
+        elif choice == "3":
             args = ["evaluate", input("Run directory: ").strip(), "--reference", input("Reference NPZ: ").strip()]
         else:
             if choice == "1":
@@ -75,6 +81,16 @@ def main(argv=None):
     sub = commands.add_parser("evaluate")
     sub.add_argument("run")
     sub.add_argument("--reference", required=True)
+    sub = commands.add_parser("assess", help="Independently assess all candidates without modifying a saved run")
+    sub.add_argument("run")
+    sub.add_argument("--input", required=True, dest="input_config")
+    sub.add_argument("--reference", required=True)
+    sub.add_argument("--out", required=True)
+    sub.add_argument("--mapping", help="Explicit reference identities and complete chemical head definitions")
+    sub.add_argument("--evaluation-python", help="Isolated Python with DockQ/PoseBusters; also TOPICS_EVALUATION_PYTHON")
+    sub.add_argument("--timeout", type=int, default=1800, help="External evaluation budget in seconds, default 1800")
+    sub = commands.add_parser("benchmark-check", help="Check inventory counts and protected dataset groups")
+    sub.add_argument("manifest")
     args = parser.parse_args(argv)
     try:
         if args.command in (None, "interactive"):
@@ -92,6 +108,15 @@ def main(argv=None):
             from .benchmark import evaluate
             result = evaluate(args.run, args.reference)
             print(json.dumps({k: result[k] for k in ("type", "top_ranked", "best_sampled")}, indent=2))
+        elif args.command == "assess":
+            from .assessment import assess
+            result = assess(args.run, args.input_config, args.reference, args.out, args.mapping,
+                            args.evaluation_python, args.timeout)
+            print(json.dumps({k: result[k] for k in ("status", "candidate_count", "summary")}, indent=2))
+            return 0 if result["status"] == "complete" else 1
+        elif args.command == "benchmark-check":
+            from .inventory import check_inventory
+            print(json.dumps(check_inventory(args.manifest), indent=2))
         else:
             from .engine import run
             output = Path(args.out)
