@@ -1,0 +1,13 @@
+{
+  "title": "MZ1 / BRD4(BD2) / VHL — 5T35",
+  "pdb_id": "5T35",
+  "poi_chains": ["A"],
+  "e3_chains": ["D"],
+  "ligand": "759",
+  "ligand_chain": "D",
+  "ligand_residue": "301",
+  "poi_head_atoms": ["NBK", "CCG", "NCP", "CCB", "NBJ"],
+  "e3_head_atoms": ["CB", "CA", "N", "CD2", "CG"],
+  "head_annotation": "BRD4-binding triazole ring and VHL-binding hydroxyproline ring. Atom names from the CCD; native local head geometries are retained.",
+  "excluded_components": ["Elongin B and C", "second crystallographic copy", "waters"]
+}

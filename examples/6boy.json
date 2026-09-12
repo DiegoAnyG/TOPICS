@@ -1,0 +1,13 @@
+{
+  "title": "dBET6 / BRD4(BD1) / CRBN — 6BOY",
+  "pdb_id": "6BOY",
+  "poi_chains": ["C"],
+  "e3_chains": ["B"],
+  "ligand": "RN6",
+  "ligand_chain": "B",
+  "ligand_residue": "502",
+  "poi_head_atoms": ["N", "N1", "C2", "N7", "C1"],
+  "e3_head_atoms": ["C23", "C22", "C26", "C25", "C24", "N5"],
+  "head_annotation": "BRD4-binding triazole ring and CRBN-binding glutarimide ring. Atom names from the CCD; native local head geometries are retained.",
+  "excluded_components": ["DDB1", "zinc ions", "waters"]
+}

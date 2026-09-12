@@ -1,0 +1,1 @@
+2026-09-11: The user was notified to consult RCSB PDB terms at https://www.rcsb.org/pages/usage-policy. Cite each entry and its primary paper.

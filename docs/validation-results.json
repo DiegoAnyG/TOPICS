@@ -1,0 +1,303 @@
+{
+  "5T35": {
+    "type": "Retrospective bound-component assembly",
+    "top_ranked": {
+      "candidate": "s44_c15",
+      "rank": 1,
+      "seed": 44,
+      "e3_ca_rmsd_A": 51.182776465798206,
+      "ligand_rmsd_A": 11.107009866011646,
+      "native_contact_recall": 0.0,
+      "contact_precision": 0.0
+    },
+    "best_sampled": {
+      "candidate": "s42_c27",
+      "rank": 24,
+      "seed": 42,
+      "e3_ca_rmsd_A": 11.726925097920226,
+      "ligand_rmsd_A": 5.785942558384484,
+      "native_contact_recall": 0.5333333333333333,
+      "contact_precision": 0.05063291139240506
+    },
+    "per_seed": [
+      {
+        "seed": 42,
+        "top_ranked": {
+          "candidate": "s42_c23",
+          "rank": 4,
+          "seed": 42,
+          "e3_ca_rmsd_A": 31.188083142114845,
+          "ligand_rmsd_A": 6.800349802389257,
+          "native_contact_recall": 0.13333333333333333,
+          "contact_precision": 0.14285714285714285
+        },
+        "best_sampled_e3_ca_rmsd_A": 11.726925097920226
+      },
+      {
+        "seed": 43,
+        "top_ranked": {
+          "candidate": "s43_c22",
+          "rank": 2,
+          "seed": 43,
+          "e3_ca_rmsd_A": 18.654474267808066,
+          "ligand_rmsd_A": 7.841619281483949,
+          "native_contact_recall": 0.06666666666666667,
+          "contact_precision": 0.5
+        },
+        "best_sampled_e3_ca_rmsd_A": 18.654474267808066
+      },
+      {
+        "seed": 44,
+        "top_ranked": {
+          "candidate": "s44_c15",
+          "rank": 1,
+          "seed": 44,
+          "e3_ca_rmsd_A": 51.182776465798206,
+          "ligand_rmsd_A": 11.107009866011646,
+          "native_contact_recall": 0.0,
+          "contact_precision": 0.0
+        },
+        "best_sampled_e3_ca_rmsd_A": 16.620587951478765
+      }
+    ],
+    "native_ppi_contacts": 15,
+    "median_e3_ca_rmsd_A": 41.15669030105739,
+    "candidate_count": 96,
+    "reference_sha256": "dbbb9672f42b2121f8c1b4ee13274691bd0b437fe54f0ec254da8d065726b423",
+    "compute_seconds": 70.69626093799889,
+    "parameters": {
+      "conformers_per_seed": 32,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "threads": 1,
+      "device_requested": "cpu",
+      "device_used": "cpu",
+      "pause_seconds": 0.05,
+      "clash_cutoff_A": 2.0,
+      "contact_cutoff_A": 5.0,
+      "embedding": "ETKDGv3, random coordinates, enforced chirality",
+      "forcefield": "MMFF94s, 1500 iterations"
+    },
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "rdkit": "2026.3.6",
+      "gemmi": "0.7.5",
+      "plotly": "7.0.0",
+      "matplotlib": "3.11.2"
+    },
+    "implementation_sha256": "adc80decf3adb347ab38ce1b0abb14c443630e358e7f145bc6fc8ba047cb4e68",
+    "input_hashes": {
+      "config": "b5f31e15248492af0f07385b8825390e957ce79eee17aca7eb8653b1b58fb755",
+      "ligand_ccd": "6f792cc7cf1a7223a869c316fef2d614afb99f017d4123ff09b011a18ab93fa6",
+      "poi": "743679c6b81bf7fda8179c8a9745e2d5d9f881cf7b3f07612f7c7f261f1de535",
+      "e3": "118904b351c7e7ce0c6ed374743fc0a4d314aeec86204255e5a08fe3d5f5a9d0"
+    },
+    "source": {
+      "pdb_id": "5T35",
+      "url": "https://www.rcsb.org/structure/5T35",
+      "sha256": "b7b44ac3543cbee16a3b59f7eeba3e5c5decf839bd6525b61de72d01c3cdc93c",
+      "resolution_A": 2.7,
+      "benchmark_type": "Retrospective bound-component assembly; not an independent blind benchmark",
+      "head_definition": "Explicit atom selections curated from the known ligand binding heads",
+      "selection": {
+        "title": "MZ1 / BRD4(BD2) / VHL \u2014 5T35",
+        "pdb_id": "5T35",
+        "poi_chains": [
+          "A"
+        ],
+        "e3_chains": [
+          "D"
+        ],
+        "ligand": "759",
+        "ligand_chain": "D",
+        "ligand_residue": "301",
+        "poi_head_atoms": [
+          "NBK",
+          "CCG",
+          "NCP",
+          "CCB",
+          "NBJ"
+        ],
+        "e3_head_atoms": [
+          "CB",
+          "CA",
+          "N",
+          "CD2",
+          "CG"
+        ],
+        "head_annotation": "BRD4-binding triazole ring and VHL-binding hydroxyproline ring. Atom names from the CCD; native local head geometries are retained.",
+        "excluded_components": [
+          "Elongin B and C",
+          "second crystallographic copy",
+          "waters"
+        ]
+      },
+      "excluded_components": [
+        "Elongin B and C",
+        "second crystallographic copy",
+        "waters"
+      ]
+    },
+    "positive_control": {
+      "e3_rmsd_A": 1.0281014165366337e-13,
+      "ligand_rmsd_A": 8.225488208639046e-14,
+      "head_rmsd_A": 7.105427357601002e-15,
+      "meaning": "Geometry/mapping positive control using native ligand geometry; not predictive accuracy"
+    }
+  },
+  "6BOY": {
+    "type": "Retrospective bound-component assembly",
+    "top_ranked": {
+      "candidate": "s44_c30",
+      "rank": 1,
+      "seed": 44,
+      "e3_ca_rmsd_A": 48.88472784731019,
+      "ligand_rmsd_A": 10.588280063691169,
+      "native_contact_recall": 0.0,
+      "contact_precision": 0.0
+    },
+    "best_sampled": {
+      "candidate": "s44_c8",
+      "rank": 6,
+      "seed": 44,
+      "e3_ca_rmsd_A": 14.735412519008177,
+      "ligand_rmsd_A": 6.627008726423924,
+      "native_contact_recall": 0.34146341463414637,
+      "contact_precision": 0.09523809523809523
+    },
+    "per_seed": [
+      {
+        "seed": 42,
+        "top_ranked": {
+          "candidate": "s42_c15",
+          "rank": 3,
+          "seed": 42,
+          "e3_ca_rmsd_A": 48.57555175006637,
+          "ligand_rmsd_A": 7.023315497558738,
+          "native_contact_recall": 0.024390243902439025,
+          "contact_precision": 0.008403361344537815
+        },
+        "best_sampled_e3_ca_rmsd_A": 14.74127914367315
+      },
+      {
+        "seed": 43,
+        "top_ranked": {
+          "candidate": "s43_c14",
+          "rank": 2,
+          "seed": 43,
+          "e3_ca_rmsd_A": 43.88804633593551,
+          "ligand_rmsd_A": 11.544224686013477,
+          "native_contact_recall": 0.0,
+          "contact_precision": 0.0
+        },
+        "best_sampled_e3_ca_rmsd_A": 31.960041665976426
+      },
+      {
+        "seed": 44,
+        "top_ranked": {
+          "candidate": "s44_c30",
+          "rank": 1,
+          "seed": 44,
+          "e3_ca_rmsd_A": 48.88472784731019,
+          "ligand_rmsd_A": 10.588280063691169,
+          "native_contact_recall": 0.0,
+          "contact_precision": 0.0
+        },
+        "best_sampled_e3_ca_rmsd_A": 14.735412519008177
+      }
+    ],
+    "native_ppi_contacts": 41,
+    "median_e3_ca_rmsd_A": 48.712173198372625,
+    "candidate_count": 96,
+    "reference_sha256": "39fa4cc2bea75115cd4704f039f4628fe03a0aca0c4ae88935c6ff2d63202dea",
+    "compute_seconds": 42.811877000000095,
+    "parameters": {
+      "conformers_per_seed": 32,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "threads": 1,
+      "device_requested": "cpu",
+      "device_used": "cpu",
+      "pause_seconds": 0.05,
+      "clash_cutoff_A": 2.0,
+      "contact_cutoff_A": 5.0,
+      "embedding": "ETKDGv3, random coordinates, enforced chirality",
+      "forcefield": "MMFF94s, 1500 iterations"
+    },
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "rdkit": "2026.3.6",
+      "gemmi": "0.7.5",
+      "plotly": "7.0.0",
+      "matplotlib": "3.11.2"
+    },
+    "implementation_sha256": "adc80decf3adb347ab38ce1b0abb14c443630e358e7f145bc6fc8ba047cb4e68",
+    "input_hashes": {
+      "config": "1b8cc4c861d207b4b1e296c129e81c535e8cc0c7087b9029d4cc52f08444b102",
+      "ligand_ccd": "d54c5e978045ccf6a3ffbd2bcff24964b42a5e1217c016f11b462bb4c854baf3",
+      "poi": "812b99108273e8fe485d0a3d9cfd07a8456296421b31d0b32a5e016f1288fd72",
+      "e3": "786bdaa6ff175a481a1bc7179e02e12572f8999cde205fccce8eb6a2ac9505ee"
+    },
+    "source": {
+      "pdb_id": "6BOY",
+      "url": "https://www.rcsb.org/structure/6BOY",
+      "sha256": "499c6f66b6fc531299fd4172a99a24d219f469e2f4c3abf07fb6ada4a6d74c3a",
+      "resolution_A": 3.33,
+      "benchmark_type": "Retrospective bound-component assembly; not an independent blind benchmark",
+      "head_definition": "Explicit atom selections curated from the known ligand binding heads",
+      "selection": {
+        "title": "dBET6 / BRD4(BD1) / CRBN \u2014 6BOY",
+        "pdb_id": "6BOY",
+        "poi_chains": [
+          "C"
+        ],
+        "e3_chains": [
+          "B"
+        ],
+        "ligand": "RN6",
+        "ligand_chain": "B",
+        "ligand_residue": "502",
+        "poi_head_atoms": [
+          "N",
+          "N1",
+          "C2",
+          "N7",
+          "C1"
+        ],
+        "e3_head_atoms": [
+          "C23",
+          "C22",
+          "C26",
+          "C25",
+          "C24",
+          "N5"
+        ],
+        "head_annotation": "BRD4-binding triazole ring and CRBN-binding glutarimide ring. Atom names from the CCD; native local head geometries are retained.",
+        "excluded_components": [
+          "DDB1",
+          "zinc ions",
+          "waters"
+        ]
+      },
+      "excluded_components": [
+        "DDB1",
+        "zinc ions",
+        "waters"
+      ]
+    },
+    "positive_control": {
+      "e3_rmsd_A": 3.0840052970341794e-08,
+      "ligand_rmsd_A": 1.1114441253119125e-13,
+      "head_rmsd_A": 3.161050162967915e-15,
+      "meaning": "Geometry/mapping positive control using native ligand geometry; not predictive accuracy"
+    }
+  }
+}
